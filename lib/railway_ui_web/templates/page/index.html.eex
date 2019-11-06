@@ -1,0 +1,10 @@
+<div class="jumbotron">
+  <h2 class="display-5"><%= gettext "Welcome to %{name}", name: "The Railway IPC UI" %></h2>
+  <h6><i>Your interface for managing Railway IPC messages</i></h6>
+</div>
+<div class="container">
+  <ul class="list-group">
+    <li class="list-group-item"><%= link "published messages", to: Routes.published_message_path(@conn, :index), class: "nav-link" %></li>
+    <li class="list-group-item"><%= link "consumed messages", to: Routes.consumed_message_path(@conn, :index), class: "nav-link" %></li>
+  </ul>
+</div>

@@ -1,0 +1,32 @@
+<div class="row justify-content-md-center">
+  <div class="col-md-auto">
+    <h1 class="display-3">Published Messages
+    </h1>
+    <table class="table table-responsive pt-3 table-hover">
+      <thead>
+        <tr>
+          <th>Message Type</th>
+          <th>UUID</th>
+          <th>Queue</th>
+          <th>Exchange</th>
+          <th>Encoded Message</th>
+          <th>Correlation ID</th>
+          <th>User UUID</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= for message <- @messages do %>
+          <tr>
+            <td><%= message.message_type %></td>
+            <td><%= message.uuid %></td>
+            <td><%= message.queue %></td>
+            <td><%= message.exchange %></td>
+            <td><%= decode_message_body(message.encoded_message) %></td>
+            <td><%= message.correlation_id %></td>
+            <td><%= message.user_uuid %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
