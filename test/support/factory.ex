@@ -3,7 +3,7 @@ defmodule RailwayUi.Factory do
   alias RailwayIpc.Persistence.{ConsumedMessage, PublishedMessage}
 
   def consumed_message_factory do
-    %ConsumedMessage{
+    %{
       uuid: Ecto.UUID.generate(),
       message_type: "BatchCreated",
       user_uuid: Ecto.UUID.generate(),
