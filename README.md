@@ -1,20 +1,42 @@
-# RailwayUi
+# Railway UI
 
-To start your Phoenix server:
+The UI layer for the [Railway IPC package](https://github.com/learn-co/railway_ipc).
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Install Node.js dependencies with `cd assets && npm install`
-  * Start Phoenix endpoint with `mix phx.server`
+## Installation
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+Include the Railway UI package in your `mix.exs` file:
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+```elixir
+def deps do
+  [
+    {:railway_ui, "~> 0.0.1"}
+  ]
+end
+```
 
-## Learn more
+## Getting Started
 
-  * Official website: http://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+The router plug can be mounted inside the Phoenix router with Phoenix.Router.forward/4.
+
+```elixir
+defmodule MyPhoenixApp.Web.Router do
+  use MyPhoenixApp.Web, :router
+
+  pipeline :mounted_apps do
+    plug :accepts, ["html"]
+    plug :put_secure_browser_headers
+  end
+
+  scope path: "/railway-ipc" do
+    pipe_through :mounted_apps
+    forward "/", RailwayUiWeb.Router, namespace: "railway-ipc"
+  end
+end
+```
+
+**Note:** There is no need to add `:protect_from_forgery` to the `:mounted_apps` pipeline because this package already implements CSRF protection. In order to enable it, your host application must use the Plug.Session plug, which is usually configured in the endpoint module in Phoenix.
+
+Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
+and published on [HexDocs](https://hexdocs.pm).
+Once published, the docs can
+be found at [https://hexdocs.pm/railway_ipc](https://hexdocs.pm/railway-ui).
