@@ -15,13 +15,13 @@ defmodule RailwayUi.Factory do
     }
   end
 
-  def published_messag_factory do
-    %ConsumedMessage{
+  def published_message_factory do
+    %PublishedMessage{
       uuid: Ecto.UUID.generate(),
-      message_type: "BatchCreated",
+      message_type: "CreateBatch",
       user_uuid: Ecto.UUID.generate(),
       correlation_id: Ecto.UUID.generate(),
-      encoded_message: "{\"encoded_message\":\"\",\"type\":\"Events::BatchCreated\"}",
+      encoded_message: "{\"encoded_message\":\"\",\"type\":\"Events::CreateBatch\"}",
       status: "sent",
       exchange: "exchange"
     }

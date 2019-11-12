@@ -140,3 +140,66 @@
 2019-11-06 08:59:32.812 [error] <0.811.0> Cowboy stream 1 with ranch listener 'Elixir.RailwayUiWeb.Endpoint.HTTP' and connection process <0.810.0> had its request process exit with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.ArgumentError',message => <<"assign @messages not available in eex template.\n\nPlease make sure all proper assigns have been set. If this\nis a child template, ensure assigns are given explicitly by\nthe parent template as they are not automatically forwarded.\n\nAvailable assigns: [:conn, :view_module, :view_template]\n">>},[{'Elixir.Phoenix.HTML.Engine','fetch_assign!',2,[{file,"lib/phoenix_html/engine.ex"},{line,133}]},{'Elixir.RailwayUiWeb.PageView',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':init/4 line 59
 2019-11-06 08:59:33.670 [error] <0.830.0> CRASH REPORT Process <0.830.0> with 0 neighbours exited with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.ArgumentError',message => <<"assign @messages not available in eex template.\n\nPlease make sure all proper assigns have been set. If this\nis a child template, ensure assigns are given explicitly by\nthe parent template as they are not automatically forwarded.\n\nAvailable assigns: [:conn, :view_module, :view_template]\n">>},[{'Elixir.Phoenix.HTML.Engine','fetch_assign!',2,[{file,"lib/phoenix_html/engine.ex"},{line,133}]},{'Elixir.RailwayUiWeb.PageView',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':init/4 line 59 in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':init/4 line 59
 2019-11-06 08:59:33.672 [error] <0.830.0> Cowboy stream 3 with ranch listener 'Elixir.RailwayUiWeb.Endpoint.HTTP' and connection process <0.810.0> had its request process exit with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.ArgumentError',message => <<"assign @messages not available in eex template.\n\nPlease make sure all proper assigns have been set. If this\nis a child template, ensure assigns are given explicitly by\nthe parent template as they are not automatically forwarded.\n\nAvailable assigns: [:conn, :view_module, :view_template]\n">>},[{'Elixir.Phoenix.HTML.Engine','fetch_assign!',2,[{file,"lib/phoenix_html/engine.ex"},{line,133}]},{'Elixir.RailwayUiWeb.PageView',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':init/4 line 59
+2019-11-12 08:42:53.153 [info] <0.43.0> Application lager started on node nonode@nohost
+2019-11-12 08:42:53.171 [info] <0.43.0> Application xmerl started on node nonode@nohost
+2019-11-12 08:42:53.175 [info] <0.43.0> Application jsx started on node nonode@nohost
+2019-11-12 08:42:53.185 [info] <0.43.0> Application ranch started on node nonode@nohost
+2019-11-12 08:42:53.188 [info] <0.43.0> Application recon started on node nonode@nohost
+2019-11-12 08:42:53.188 [info] <0.43.0> Application rabbit_common started on node nonode@nohost
+2019-11-12 08:42:53.214 [info] <0.43.0> Application amqp_client started on node nonode@nohost
+2019-11-12 08:42:53.219 [info] <0.43.0> Application amqp started on node nonode@nohost
+2019-11-12 08:42:53.224 [info] <0.43.0> Application elixir_uuid started on node nonode@nohost
+2019-11-12 08:42:53.228 [info] <0.43.0> Application protobuf started on node nonode@nohost
+2019-11-12 08:42:53.232 [info] <0.43.0> Application google_protos started on node nonode@nohost
+2019-11-12 08:42:53.233 [info] <0.43.0> Application railway_ipc started on node nonode@nohost
+2019-11-12 08:42:53.235 [info] <0.43.0> Application phoenix_html started on node nonode@nohost
+2019-11-12 08:42:53.242 [info] <0.43.0> Application cowlib started on node nonode@nohost
+2019-11-12 08:42:53.252 [info] <0.43.0> Application cowboy started on node nonode@nohost
+2019-11-12 08:42:53.254 [info] <0.43.0> Application plug_cowboy started on node nonode@nohost
+2019-11-12 08:42:53.258 [info] <0.43.0> Application phoenix_ecto started on node nonode@nohost
+2019-11-12 08:42:53.495 [info] <0.43.0> Application railway_ui started on node nonode@nohost
+2019-11-12 08:42:53.513 [info] <0.43.0> Application ex_unit started on node nonode@nohost
+2019-11-12 08:42:53.761 [error] <0.49.0> Loading of /Users/sophie.debenedetto/Dev/railway_hex/railway_ui/_build/test/lib/jason/ebin/Elixir.JASON.beam failed: badfile
+2019-11-12 08:42:53.761 [error] emulator beam/beam_load.c(1433): Error loading module 'Elixir.JASON':
+  BEAM file exists but it defines a module named Elixir.Jason
+
+2019-11-12 08:45:55.344 [info] <0.43.0> Application lager started on node nonode@nohost
+2019-11-12 08:45:55.357 [info] <0.43.0> Application xmerl started on node nonode@nohost
+2019-11-12 08:45:55.362 [info] <0.43.0> Application jsx started on node nonode@nohost
+2019-11-12 08:45:55.370 [info] <0.43.0> Application ranch started on node nonode@nohost
+2019-11-12 08:45:55.373 [info] <0.43.0> Application recon started on node nonode@nohost
+2019-11-12 08:45:55.373 [info] <0.43.0> Application rabbit_common started on node nonode@nohost
+2019-11-12 08:45:55.381 [info] <0.43.0> Application amqp_client started on node nonode@nohost
+2019-11-12 08:45:55.383 [info] <0.43.0> Application amqp started on node nonode@nohost
+2019-11-12 08:45:55.387 [info] <0.43.0> Application elixir_uuid started on node nonode@nohost
+2019-11-12 08:45:55.390 [info] <0.43.0> Application protobuf started on node nonode@nohost
+2019-11-12 08:45:55.395 [info] <0.43.0> Application google_protos started on node nonode@nohost
+2019-11-12 08:45:55.397 [info] <0.43.0> Application railway_ipc started on node nonode@nohost
+2019-11-12 08:45:55.399 [info] <0.43.0> Application phoenix_html started on node nonode@nohost
+2019-11-12 08:45:55.407 [info] <0.43.0> Application cowlib started on node nonode@nohost
+2019-11-12 08:45:55.414 [info] <0.43.0> Application cowboy started on node nonode@nohost
+2019-11-12 08:45:55.417 [info] <0.43.0> Application plug_cowboy started on node nonode@nohost
+2019-11-12 08:45:55.424 [info] <0.43.0> Application file_system started on node nonode@nohost
+2019-11-12 08:45:55.451 [info] <0.43.0> Application phoenix_live_reload started on node nonode@nohost
+2019-11-12 08:45:55.457 [info] <0.43.0> Application phoenix_ecto started on node nonode@nohost
+2019-11-12 08:45:55.565 [info] <0.43.0> Application railway_ui started on node nonode@nohost
+2019-11-12 08:47:22.997 [info] <0.43.0> Application lager started on node nonode@nohost
+2019-11-12 08:47:23.006 [info] <0.43.0> Application xmerl started on node nonode@nohost
+2019-11-12 08:47:23.014 [info] <0.43.0> Application jsx started on node nonode@nohost
+2019-11-12 08:47:23.021 [info] <0.43.0> Application ranch started on node nonode@nohost
+2019-11-12 08:47:23.024 [info] <0.43.0> Application recon started on node nonode@nohost
+2019-11-12 08:47:23.024 [info] <0.43.0> Application rabbit_common started on node nonode@nohost
+2019-11-12 08:47:23.031 [info] <0.43.0> Application amqp_client started on node nonode@nohost
+2019-11-12 08:47:23.033 [info] <0.43.0> Application amqp started on node nonode@nohost
+2019-11-12 08:47:23.038 [info] <0.43.0> Application elixir_uuid started on node nonode@nohost
+2019-11-12 08:47:23.041 [info] <0.43.0> Application protobuf started on node nonode@nohost
+2019-11-12 08:47:23.045 [info] <0.43.0> Application google_protos started on node nonode@nohost
+2019-11-12 08:47:23.046 [info] <0.43.0> Application railway_ipc started on node nonode@nohost
+2019-11-12 08:47:23.047 [info] <0.43.0> Application phoenix_html started on node nonode@nohost
+2019-11-12 08:47:23.053 [info] <0.43.0> Application cowlib started on node nonode@nohost
+2019-11-12 08:47:23.059 [info] <0.43.0> Application cowboy started on node nonode@nohost
+2019-11-12 08:47:23.062 [info] <0.43.0> Application plug_cowboy started on node nonode@nohost
+2019-11-12 08:47:23.068 [info] <0.43.0> Application file_system started on node nonode@nohost
+2019-11-12 08:47:23.077 [info] <0.43.0> Application phoenix_live_reload started on node nonode@nohost
+2019-11-12 08:47:23.080 [info] <0.43.0> Application phoenix_ecto started on node nonode@nohost
+2019-11-12 08:47:23.261 [info] <0.43.0> Application railway_ui started on node nonode@nohost
