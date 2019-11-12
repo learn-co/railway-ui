@@ -25,6 +25,7 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 config :railway_ipc, repo: RailwayUi.Repo
+config :railway_ipc, dev_repo: true
 config :railway_ui, persistence: RailwayUi.Persistence
 
 # Import environment specific config. This must remain at the bottom

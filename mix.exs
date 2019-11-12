@@ -4,13 +4,17 @@ defmodule RailwayUi.MixProject do
   def project do
     [
       app: :railway_ui,
-      version: "0.1.0",
+      version: "0.0.1",
       elixir: "~> 1.5",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      description: description(),
+      package: package(),
+      name: "Railway IPC UI",
+      source_url: "https://github.com/learn-co/railway-ui"
     ]
   end
 
@@ -60,6 +64,19 @@ defmodule RailwayUi.MixProject do
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate", "test"]
+    ]
+  end
+
+  defp description() do
+    "The UI layer for the Railway IPC package"
+  end
+
+  defp package() do
+    [
+      description: "Railway IPC UI",
+      files: ~w(lib .formatter.exs mix.exs README* LICENSE* CHANGELOG*),
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/learn-co/railway-ui"}
     ]
   end
 end
