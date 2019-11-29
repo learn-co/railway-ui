@@ -16,7 +16,7 @@ defmodule RailwayUiWeb.PublishedMessagesLive.Index do
     {:ok, socket, temporary_assigns: [messages: []]}
   end
 
-  def handle_event("republish", %{"message_uuid" => message_uuid}, %{assigns: %{flash: flash}} = socket) do
+  def handle_event("republish", %{"message_uuid" => message_uuid}, socket) do
     case RailwayIpc.republish_message(message_uuid, request_data(socket)) do
       :ok ->
         {:noreply, assign(socket, :flash, %{info: "Successfully republished message #{message_uuid}!"})}
