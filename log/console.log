@@ -203,3 +203,276 @@
 2019-11-12 08:47:23.077 [info] <0.43.0> Application phoenix_live_reload started on node nonode@nohost
 2019-11-12 08:47:23.080 [info] <0.43.0> Application phoenix_ecto started on node nonode@nohost
 2019-11-12 08:47:23.261 [info] <0.43.0> Application railway_ui started on node nonode@nohost
+2019-11-29 10:01:59.466 [info] <0.43.0> Application lager started on node nonode@nohost
+2019-11-29 10:01:59.477 [info] <0.43.0> Application xmerl started on node nonode@nohost
+2019-11-29 10:01:59.484 [info] <0.43.0> Application jsx started on node nonode@nohost
+2019-11-29 10:01:59.494 [info] <0.43.0> Application ranch started on node nonode@nohost
+2019-11-29 10:01:59.497 [info] <0.43.0> Application recon started on node nonode@nohost
+2019-11-29 10:01:59.497 [info] <0.43.0> Application rabbit_common started on node nonode@nohost
+2019-11-29 10:01:59.506 [info] <0.43.0> Application amqp_client started on node nonode@nohost
+2019-11-29 10:01:59.507 [info] <0.43.0> Application amqp started on node nonode@nohost
+2019-11-29 10:01:59.512 [info] <0.43.0> Application elixir_uuid started on node nonode@nohost
+2019-11-29 10:01:59.517 [info] <0.43.0> Application protobuf started on node nonode@nohost
+2019-11-29 10:01:59.523 [info] <0.43.0> Application google_protos started on node nonode@nohost
+2019-11-29 10:01:59.536 [info] <0.43.0> Application railway_ipc started on node nonode@nohost
+2019-11-29 10:01:59.539 [info] <0.43.0> Application phoenix_html started on node nonode@nohost
+2019-11-29 10:01:59.544 [error] <0.2770.0> gen_server <0.2770.0> terminated with reason: #{'__exception__' => true,'__struct__' => 'Elixir.RuntimeError',message => <<"connect raised KeyError exception: key :database not found. The exception details are hidden, as they may contain sensitive data such as database credentials. You may set :show_sensitive_data_on_connection_error to true when starting your connection if you wish to see all of the details">>} in 'Elixir.Keyword':'fetch!'/2 line 393
+2019-11-29 10:01:59.544 [error] <0.2772.0> gen_server <0.2772.0> terminated with reason: #{'__exception__' => true,'__struct__' => 'Elixir.RuntimeError',message => <<"connect raised KeyError exception: key :database not found. The exception details are hidden, as they may contain sensitive data such as database credentials. You may set :show_sensitive_data_on_connection_error to true when starting your connection if you wish to see all of the details">>} in 'Elixir.Keyword':'fetch!'/2 line 393
+2019-11-29 10:01:59.545 [error] <0.2771.0> gen_server <0.2771.0> terminated with reason: #{'__exception__' => true,'__struct__' => 'Elixir.RuntimeError',message => <<"connect raised KeyError exception: key :database not found. The exception details are hidden, as they may contain sensitive data such as database credentials. You may set :show_sensitive_data_on_connection_error to true when starting your connection if you wish to see all of the details">>} in 'Elixir.Keyword':'fetch!'/2 line 393
+2019-11-29 10:01:59.545 [error] <0.2773.0> gen_server <0.2773.0> terminated with reason: #{'__exception__' => true,'__struct__' => 'Elixir.RuntimeError',message => <<"connect raised KeyError exception: key :database not found. The exception details are hidden, as they may contain sensitive data such as database credentials. You may set :show_sensitive_data_on_connection_error to true when starting your connection if you wish to see all of the details">>} in 'Elixir.Keyword':'fetch!'/2 line 393
+2019-11-29 10:04:16.800 [info] <0.43.0> Application lager started on node nonode@nohost
+2019-11-29 10:04:16.814 [info] <0.43.0> Application xmerl started on node nonode@nohost
+2019-11-29 10:04:16.819 [info] <0.43.0> Application jsx started on node nonode@nohost
+2019-11-29 10:04:16.828 [info] <0.43.0> Application ranch started on node nonode@nohost
+2019-11-29 10:04:16.831 [info] <0.43.0> Application recon started on node nonode@nohost
+2019-11-29 10:04:16.831 [info] <0.43.0> Application rabbit_common started on node nonode@nohost
+2019-11-29 10:04:16.851 [info] <0.43.0> Application amqp_client started on node nonode@nohost
+2019-11-29 10:04:16.856 [info] <0.43.0> Application amqp started on node nonode@nohost
+2019-11-29 10:04:16.861 [info] <0.43.0> Application elixir_uuid started on node nonode@nohost
+2019-11-29 10:04:16.870 [info] <0.43.0> Application protobuf started on node nonode@nohost
+2019-11-29 10:04:16.876 [info] <0.43.0> Application google_protos started on node nonode@nohost
+2019-11-29 10:04:16.903 [info] <0.43.0> Application railway_ipc started on node nonode@nohost
+2019-11-29 10:04:16.911 [info] <0.43.0> Application phoenix_html started on node nonode@nohost
+2019-11-29 10:04:16.924 [error] <0.493.0> gen_server <0.493.0> terminated with reason: #{'__exception__' => true,'__struct__' => 'Elixir.RuntimeError',message => <<"connect raised KeyError exception: key :database not found. The exception details are hidden, as they may contain sensitive data such as database credentials. You may set :show_sensitive_data_on_connection_error to true when starting your connection if you wish to see all of the details">>} in 'Elixir.Keyword':'fetch!'/2 line 393
+2019-11-29 10:04:16.924 [error] <0.496.0> gen_server <0.496.0> terminated with reason: #{'__exception__' => true,'__struct__' => 'Elixir.RuntimeError',message => <<"connect raised KeyError exception: key :database not found. The exception details are hidden, as they may contain sensitive data such as database credentials. You may set :show_sensitive_data_on_connection_error to true when starting your connection if you wish to see all of the details">>} in 'Elixir.Keyword':'fetch!'/2 line 393
+2019-11-29 10:04:16.924 [error] <0.499.0> gen_server <0.499.0> terminated with reason: #{'__exception__' => true,'__struct__' => 'Elixir.RuntimeError',message => <<"connect raised KeyError exception: key :database not found. The exception details are hidden, as they may contain sensitive data such as database credentials. You may set :show_sensitive_data_on_connection_error to true when starting your connection if you wish to see all of the details">>} in 'Elixir.Keyword':'fetch!'/2 line 393
+2019-11-29 10:04:16.924 [error] <0.495.0> gen_server <0.495.0> terminated with reason: #{'__exception__' => true,'__struct__' => 'Elixir.RuntimeError',message => <<"connect raised KeyError exception: key :database not found. The exception details are hidden, as they may contain sensitive data such as database credentials. You may set :show_sensitive_data_on_connection_error to true when starting your connection if you wish to see all of the details">>} in 'Elixir.Keyword':'fetch!'/2 line 393
+2019-11-29 10:04:16.925 [error] <0.491.0> gen_server <0.491.0> terminated with reason: #{'__exception__' => true,'__struct__' => 'Elixir.RuntimeError',message => <<"connect raised KeyError exception: key :database not found. The exception details are hidden, as they may contain sensitive data such as database credentials. You may set :show_sensitive_data_on_connection_error to true when starting your connection if you wish to see all of the details">>} in 'Elixir.Keyword':'fetch!'/2 line 393
+2019-11-29 10:04:16.925 [error] <0.492.0> gen_server <0.492.0> terminated with reason: #{'__exception__' => true,'__struct__' => 'Elixir.RuntimeError',message => <<"connect raised KeyError exception: key :database not found. The exception details are hidden, as they may contain sensitive data such as database credentials. You may set :show_sensitive_data_on_connection_error to true when starting your connection if you wish to see all of the details">>} in 'Elixir.Keyword':'fetch!'/2 line 393
+2019-11-29 10:05:57.320 [info] <0.43.0> Application lager started on node nonode@nohost
+2019-11-29 10:05:57.332 [info] <0.43.0> Application xmerl started on node nonode@nohost
+2019-11-29 10:05:57.339 [info] <0.43.0> Application jsx started on node nonode@nohost
+2019-11-29 10:05:57.351 [info] <0.43.0> Application ranch started on node nonode@nohost
+2019-11-29 10:05:57.354 [info] <0.43.0> Application recon started on node nonode@nohost
+2019-11-29 10:05:57.354 [info] <0.43.0> Application rabbit_common started on node nonode@nohost
+2019-11-29 10:05:57.363 [info] <0.43.0> Application amqp_client started on node nonode@nohost
+2019-11-29 10:05:57.363 [info] <0.43.0> Application amqp started on node nonode@nohost
+2019-11-29 10:05:57.369 [info] <0.43.0> Application elixir_uuid started on node nonode@nohost
+2019-11-29 10:05:57.376 [info] <0.43.0> Application protobuf started on node nonode@nohost
+2019-11-29 10:05:57.380 [info] <0.43.0> Application google_protos started on node nonode@nohost
+2019-11-29 10:05:57.380 [info] <0.43.0> Application railway_ipc started on node nonode@nohost
+2019-11-29 10:05:57.381 [info] <0.43.0> Application phoenix_html started on node nonode@nohost
+2019-11-29 10:05:57.388 [info] <0.43.0> Application cowlib started on node nonode@nohost
+2019-11-29 10:05:57.395 [info] <0.43.0> Application cowboy started on node nonode@nohost
+2019-11-29 10:05:57.395 [info] <0.43.0> Application plug_cowboy started on node nonode@nohost
+2019-11-29 10:05:57.401 [info] <0.43.0> Application file_system started on node nonode@nohost
+2019-11-29 10:05:57.405 [info] <0.43.0> Application phoenix_live_reload started on node nonode@nohost
+2019-11-29 10:05:57.406 [info] <0.43.0> Application phoenix_ecto started on node nonode@nohost
+2019-11-29 10:05:57.462 [info] <0.43.0> Application railway_ui started on node nonode@nohost
+2019-11-29 10:07:03.502 [info] <0.43.0> Application lager started on node nonode@nohost
+2019-11-29 10:07:03.511 [info] <0.43.0> Application xmerl started on node nonode@nohost
+2019-11-29 10:07:03.515 [info] <0.43.0> Application jsx started on node nonode@nohost
+2019-11-29 10:07:03.525 [info] <0.43.0> Application ranch started on node nonode@nohost
+2019-11-29 10:07:03.527 [info] <0.43.0> Application recon started on node nonode@nohost
+2019-11-29 10:07:03.528 [info] <0.43.0> Application rabbit_common started on node nonode@nohost
+2019-11-29 10:07:03.537 [info] <0.43.0> Application amqp_client started on node nonode@nohost
+2019-11-29 10:07:03.537 [info] <0.43.0> Application amqp started on node nonode@nohost
+2019-11-29 10:07:03.542 [info] <0.43.0> Application elixir_uuid started on node nonode@nohost
+2019-11-29 10:07:03.551 [info] <0.43.0> Application protobuf started on node nonode@nohost
+2019-11-29 10:07:03.556 [info] <0.43.0> Application google_protos started on node nonode@nohost
+2019-11-29 10:07:03.556 [error] <0.1994.0>@Elixir.RailwayIpc.Application:children:11 CRASH REPORT Process <0.1994.0> with 0 neighbours exited with reason: no function clause matching 'Elixir.RailwayIpc.Application':children(nil, dev) line 11 in application_master:init/4 line 138
+2019-11-29 10:09:15.430 [info] <0.43.0> Application lager started on node nonode@nohost
+2019-11-29 10:09:15.441 [info] <0.43.0> Application xmerl started on node nonode@nohost
+2019-11-29 10:09:15.446 [info] <0.43.0> Application jsx started on node nonode@nohost
+2019-11-29 10:09:15.457 [info] <0.43.0> Application ranch started on node nonode@nohost
+2019-11-29 10:09:15.460 [info] <0.43.0> Application recon started on node nonode@nohost
+2019-11-29 10:09:15.460 [info] <0.43.0> Application rabbit_common started on node nonode@nohost
+2019-11-29 10:09:15.468 [info] <0.43.0> Application amqp_client started on node nonode@nohost
+2019-11-29 10:09:15.468 [info] <0.43.0> Application amqp started on node nonode@nohost
+2019-11-29 10:09:15.472 [info] <0.43.0> Application elixir_uuid started on node nonode@nohost
+2019-11-29 10:09:15.478 [info] <0.43.0> Application protobuf started on node nonode@nohost
+2019-11-29 10:09:15.481 [info] <0.43.0> Application google_protos started on node nonode@nohost
+2019-11-29 10:09:15.482 [error] <0.4388.0>@Elixir.RailwayIpc.Application:children:11 CRASH REPORT Process <0.4388.0> with 0 neighbours exited with reason: no function clause matching 'Elixir.RailwayIpc.Application':children(nil, dev) line 11 in application_master:init/4 line 138
+2019-11-29 10:09:34.917 [info] <0.43.0> Application lager started on node nonode@nohost
+2019-11-29 10:09:34.926 [info] <0.43.0> Application xmerl started on node nonode@nohost
+2019-11-29 10:09:34.931 [info] <0.43.0> Application jsx started on node nonode@nohost
+2019-11-29 10:09:34.937 [info] <0.43.0> Application ranch started on node nonode@nohost
+2019-11-29 10:09:34.940 [info] <0.43.0> Application recon started on node nonode@nohost
+2019-11-29 10:09:34.940 [info] <0.43.0> Application rabbit_common started on node nonode@nohost
+2019-11-29 10:09:34.946 [info] <0.43.0> Application amqp_client started on node nonode@nohost
+2019-11-29 10:09:34.949 [info] <0.43.0> Application amqp started on node nonode@nohost
+2019-11-29 10:09:34.953 [info] <0.43.0> Application elixir_uuid started on node nonode@nohost
+2019-11-29 10:09:34.956 [info] <0.43.0> Application protobuf started on node nonode@nohost
+2019-11-29 10:09:34.962 [info] <0.43.0> Application google_protos started on node nonode@nohost
+2019-11-29 10:09:34.968 [info] <0.43.0> Application railway_ipc started on node nonode@nohost
+2019-11-29 10:09:34.974 [info] <0.43.0> Application phoenix_html started on node nonode@nohost
+2019-11-29 10:09:34.985 [info] <0.43.0> Application cowlib started on node nonode@nohost
+2019-11-29 10:09:34.992 [info] <0.43.0> Application cowboy started on node nonode@nohost
+2019-11-29 10:09:34.997 [info] <0.43.0> Application plug_cowboy started on node nonode@nohost
+2019-11-29 10:09:35.006 [info] <0.43.0> Application file_system started on node nonode@nohost
+2019-11-29 10:09:35.043 [info] <0.43.0> Application phoenix_live_reload started on node nonode@nohost
+2019-11-29 10:09:35.056 [info] <0.43.0> Application phoenix_ecto started on node nonode@nohost
+2019-11-29 10:09:36.007 [warning] <0.372.0> lager_error_logger_h dropped 361 messages in the last second that exceeded the limit of 50 messages/sec
+2019-11-29 10:11:59.069 [info] <0.43.0> Application lager started on node nonode@nohost
+2019-11-29 10:11:59.078 [info] <0.43.0> Application xmerl started on node nonode@nohost
+2019-11-29 10:11:59.083 [info] <0.43.0> Application jsx started on node nonode@nohost
+2019-11-29 10:11:59.089 [info] <0.43.0> Application ranch started on node nonode@nohost
+2019-11-29 10:11:59.092 [info] <0.43.0> Application recon started on node nonode@nohost
+2019-11-29 10:11:59.092 [info] <0.43.0> Application rabbit_common started on node nonode@nohost
+2019-11-29 10:11:59.099 [info] <0.43.0> Application amqp_client started on node nonode@nohost
+2019-11-29 10:11:59.101 [info] <0.43.0> Application amqp started on node nonode@nohost
+2019-11-29 10:11:59.105 [info] <0.43.0> Application elixir_uuid started on node nonode@nohost
+2019-11-29 10:11:59.108 [info] <0.43.0> Application protobuf started on node nonode@nohost
+2019-11-29 10:11:59.112 [info] <0.43.0> Application google_protos started on node nonode@nohost
+2019-11-29 10:11:59.117 [info] <0.43.0> Application railway_ipc started on node nonode@nohost
+2019-11-29 10:11:59.120 [info] <0.43.0> Application phoenix_html started on node nonode@nohost
+2019-11-29 10:11:59.135 [info] <0.43.0> Application cowlib started on node nonode@nohost
+2019-11-29 10:11:59.143 [info] <0.43.0> Application cowboy started on node nonode@nohost
+2019-11-29 10:11:59.145 [info] <0.43.0> Application plug_cowboy started on node nonode@nohost
+2019-11-29 10:11:59.154 [info] <0.43.0> Application file_system started on node nonode@nohost
+2019-11-29 10:11:59.183 [info] <0.43.0> Application phoenix_live_reload started on node nonode@nohost
+2019-11-29 10:11:59.192 [info] <0.43.0> Application phoenix_ecto started on node nonode@nohost
+2019-11-29 10:12:00.009 [warning] <0.377.0> lager_error_logger_h dropped 31 messages in the last second that exceeded the limit of 50 messages/sec
+2019-11-29 13:51:47.904 [info] <0.43.0> Application lager started on node nonode@nohost
+2019-11-29 13:51:47.919 [info] <0.43.0> Application xmerl started on node nonode@nohost
+2019-11-29 13:51:47.928 [info] <0.43.0> Application jsx started on node nonode@nohost
+2019-11-29 13:51:47.943 [info] <0.43.0> Application ranch started on node nonode@nohost
+2019-11-29 13:51:47.958 [info] <0.43.0> Application recon started on node nonode@nohost
+2019-11-29 13:51:47.958 [info] <0.43.0> Application rabbit_common started on node nonode@nohost
+2019-11-29 13:51:47.981 [info] <0.43.0> Application amqp_client started on node nonode@nohost
+2019-11-29 13:51:47.987 [info] <0.43.0> Application amqp started on node nonode@nohost
+2019-11-29 13:51:47.992 [info] <0.43.0> Application elixir_uuid started on node nonode@nohost
+2019-11-29 13:51:47.998 [info] <0.43.0> Application protobuf started on node nonode@nohost
+2019-11-29 13:51:48.003 [info] <0.43.0> Application google_protos started on node nonode@nohost
+2019-11-29 13:51:48.015 [info] <0.43.0> Application railway_ipc started on node nonode@nohost
+2019-11-29 13:51:48.022 [info] <0.43.0> Application phoenix_html started on node nonode@nohost
+2019-11-29 13:51:48.047 [info] <0.43.0> Application cowlib started on node nonode@nohost
+2019-11-29 13:51:48.061 [info] <0.43.0> Application cowboy started on node nonode@nohost
+2019-11-29 13:51:48.069 [info] <0.43.0> Application plug_cowboy started on node nonode@nohost
+2019-11-29 13:51:48.187 [info] <0.43.0> Application file_system started on node nonode@nohost
+2019-11-29 13:51:48.281 [info] <0.43.0> Application phoenix_live_reload started on node nonode@nohost
+2019-11-29 13:51:48.295 [info] <0.43.0> Application phoenix_ecto started on node nonode@nohost
+2019-11-29 13:51:49.049 [warning] <0.360.0> lager_error_logger_h dropped 3 messages in the last second that exceeded the limit of 50 messages/sec
+2019-11-29 13:51:49.314 [info] <0.43.0> Application railway_ui started on node nonode@nohost
+2019-11-29 13:55:27.112 [info] <0.43.0> Application lager started on node nonode@nohost
+2019-11-29 13:55:27.123 [info] <0.43.0> Application xmerl started on node nonode@nohost
+2019-11-29 13:55:27.128 [info] <0.43.0> Application jsx started on node nonode@nohost
+2019-11-29 13:55:27.138 [info] <0.43.0> Application ranch started on node nonode@nohost
+2019-11-29 13:55:27.141 [info] <0.43.0> Application recon started on node nonode@nohost
+2019-11-29 13:55:27.141 [info] <0.43.0> Application rabbit_common started on node nonode@nohost
+2019-11-29 13:55:27.152 [info] <0.43.0> Application amqp_client started on node nonode@nohost
+2019-11-29 13:55:27.161 [info] <0.43.0> Application amqp started on node nonode@nohost
+2019-11-29 13:55:27.165 [info] <0.43.0> Application elixir_uuid started on node nonode@nohost
+2019-11-29 13:55:27.171 [info] <0.43.0> Application protobuf started on node nonode@nohost
+2019-11-29 13:55:27.178 [info] <0.43.0> Application google_protos started on node nonode@nohost
+2019-11-29 13:55:27.189 [info] <0.43.0> Application railway_ipc started on node nonode@nohost
+2019-11-29 13:55:27.193 [info] <0.43.0> Application phoenix_html started on node nonode@nohost
+2019-11-29 13:55:27.205 [info] <0.43.0> Application cowlib started on node nonode@nohost
+2019-11-29 13:55:27.214 [info] <0.43.0> Application cowboy started on node nonode@nohost
+2019-11-29 13:55:27.218 [info] <0.43.0> Application plug_cowboy started on node nonode@nohost
+2019-11-29 13:55:27.237 [info] <0.43.0> Application file_system started on node nonode@nohost
+2019-11-29 13:55:27.273 [info] <0.43.0> Application phoenix_live_reload started on node nonode@nohost
+2019-11-29 13:55:27.291 [info] <0.43.0> Application phoenix_ecto started on node nonode@nohost
+2019-11-29 13:55:28.009 [warning] <0.362.0> lager_error_logger_h dropped 135 messages in the last second that exceeded the limit of 50 messages/sec
+2019-11-29 14:00:09.941 [info] <0.43.0> Application lager started on node nonode@nohost
+2019-11-29 14:00:09.952 [info] <0.43.0> Application xmerl started on node nonode@nohost
+2019-11-29 14:00:09.958 [info] <0.43.0> Application jsx started on node nonode@nohost
+2019-11-29 14:00:09.966 [info] <0.43.0> Application ranch started on node nonode@nohost
+2019-11-29 14:00:09.969 [info] <0.43.0> Application recon started on node nonode@nohost
+2019-11-29 14:00:09.969 [info] <0.43.0> Application rabbit_common started on node nonode@nohost
+2019-11-29 14:00:09.980 [info] <0.43.0> Application amqp_client started on node nonode@nohost
+2019-11-29 14:00:09.985 [info] <0.43.0> Application amqp started on node nonode@nohost
+2019-11-29 14:00:09.990 [info] <0.43.0> Application elixir_uuid started on node nonode@nohost
+2019-11-29 14:00:09.995 [info] <0.43.0> Application protobuf started on node nonode@nohost
+2019-11-29 14:00:10.002 [info] <0.43.0> Application google_protos started on node nonode@nohost
+2019-11-29 14:00:10.013 [info] <0.43.0> Application railway_ipc started on node nonode@nohost
+2019-11-29 14:00:10.017 [info] <0.43.0> Application phoenix_html started on node nonode@nohost
+2019-11-29 14:00:10.031 [info] <0.43.0> Application cowlib started on node nonode@nohost
+2019-11-29 14:00:10.040 [info] <0.43.0> Application cowboy started on node nonode@nohost
+2019-11-29 14:00:10.044 [info] <0.43.0> Application plug_cowboy started on node nonode@nohost
+2019-11-29 14:00:10.060 [info] <0.43.0> Application file_system started on node nonode@nohost
+2019-11-29 14:00:10.091 [info] <0.43.0> Application phoenix_live_reload started on node nonode@nohost
+2019-11-29 14:00:10.103 [info] <0.43.0> Application phoenix_ecto started on node nonode@nohost
+2019-11-29 14:00:10.999 [warning] <0.373.0> lager_error_logger_h dropped 31 messages in the last second that exceeded the limit of 50 messages/sec
+2019-11-29 14:01:00.273 [info] <0.43.0> Application lager started on node nonode@nohost
+2019-11-29 14:01:00.284 [info] <0.43.0> Application xmerl started on node nonode@nohost
+2019-11-29 14:01:00.289 [info] <0.43.0> Application jsx started on node nonode@nohost
+2019-11-29 14:01:00.296 [info] <0.43.0> Application ranch started on node nonode@nohost
+2019-11-29 14:01:00.299 [info] <0.43.0> Application recon started on node nonode@nohost
+2019-11-29 14:01:00.299 [info] <0.43.0> Application rabbit_common started on node nonode@nohost
+2019-11-29 14:01:00.305 [info] <0.43.0> Application amqp_client started on node nonode@nohost
+2019-11-29 14:01:00.307 [info] <0.43.0> Application amqp started on node nonode@nohost
+2019-11-29 14:01:00.311 [info] <0.43.0> Application elixir_uuid started on node nonode@nohost
+2019-11-29 14:01:00.318 [info] <0.43.0> Application protobuf started on node nonode@nohost
+2019-11-29 14:01:00.323 [info] <0.43.0> Application google_protos started on node nonode@nohost
+2019-11-29 14:01:00.331 [info] <0.43.0> Application railway_ipc started on node nonode@nohost
+2019-11-29 14:01:00.337 [info] <0.43.0> Application phoenix_html started on node nonode@nohost
+2019-11-29 14:01:00.347 [info] <0.43.0> Application cowlib started on node nonode@nohost
+2019-11-29 14:01:00.354 [info] <0.43.0> Application cowboy started on node nonode@nohost
+2019-11-29 14:01:00.358 [info] <0.43.0> Application plug_cowboy started on node nonode@nohost
+2019-11-29 14:01:00.369 [info] <0.43.0> Application file_system started on node nonode@nohost
+2019-11-29 14:01:00.398 [info] <0.43.0> Application phoenix_live_reload started on node nonode@nohost
+2019-11-29 14:01:00.410 [info] <0.43.0> Application phoenix_ecto started on node nonode@nohost
+2019-11-29 14:01:01.023 [warning] <0.360.0> lager_error_logger_h dropped 135 messages in the last second that exceeded the limit of 50 messages/sec
+2019-11-29 14:08:14.561 [info] <0.43.0> Application lager started on node nonode@nohost
+2019-11-29 14:08:14.574 [info] <0.43.0> Application xmerl started on node nonode@nohost
+2019-11-29 14:08:14.581 [info] <0.43.0> Application jsx started on node nonode@nohost
+2019-11-29 14:08:14.591 [info] <0.43.0> Application ranch started on node nonode@nohost
+2019-11-29 14:08:14.595 [info] <0.43.0> Application recon started on node nonode@nohost
+2019-11-29 14:08:14.595 [info] <0.43.0> Application rabbit_common started on node nonode@nohost
+2019-11-29 14:08:14.604 [info] <0.43.0> Application amqp_client started on node nonode@nohost
+2019-11-29 14:08:14.609 [info] <0.43.0> Application amqp started on node nonode@nohost
+2019-11-29 14:08:14.622 [info] <0.43.0> Application elixir_uuid started on node nonode@nohost
+2019-11-29 14:08:14.629 [info] <0.43.0> Application protobuf started on node nonode@nohost
+2019-11-29 14:08:14.634 [info] <0.43.0> Application google_protos started on node nonode@nohost
+2019-11-29 14:08:14.642 [info] <0.43.0> Application railway_ipc started on node nonode@nohost
+2019-11-29 14:08:14.647 [info] <0.43.0> Application phoenix_html started on node nonode@nohost
+2019-11-29 14:08:14.662 [info] <0.43.0> Application cowlib started on node nonode@nohost
+2019-11-29 14:08:14.674 [info] <0.43.0> Application cowboy started on node nonode@nohost
+2019-11-29 14:08:14.684 [info] <0.43.0> Application plug_cowboy started on node nonode@nohost
+2019-11-29 14:08:14.703 [info] <0.43.0> Application file_system started on node nonode@nohost
+2019-11-29 14:08:14.752 [info] <0.43.0> Application phoenix_live_reload started on node nonode@nohost
+2019-11-29 14:08:14.758 [info] <0.43.0> Application phoenix_live_view started on node nonode@nohost
+2019-11-29 14:08:14.769 [info] <0.43.0> Application phoenix_ecto started on node nonode@nohost
+2019-11-29 14:08:15.001 [warning] <0.619.0> lager_error_logger_h dropped 7 messages in the last second that exceeded the limit of 50 messages/sec
+2019-11-29 14:08:15.999 [warning] <0.619.0> lager_error_logger_h dropped 86 messages in the last second that exceeded the limit of 50 messages/sec
+2019-11-29 14:21:13.729 [error] <0.899.0> CRASH REPORT Process <0.899.0> with 0 neighbours exited with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 0,function => '__live__',message => nil,module => 'Elixir.RailwayUiWeb.PublishedMessagesLive.Index',reason => nil},[{'Elixir.RailwayUiWeb.PublishedMessagesLive.Index','__live__',[],[]},{'Elixir.Phoenix.LiveView.Static','load_live!',2,[{file,"lib/phoenix_live_view/static.ex"},{line,219}]},{'Elixir.Phoenix.LiveView.Static',render,3,[{file,"lib/phoenix_live_view/static.ex"},{line,72}]},{'Elixir.Phoenix.LiveView.Controller',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':init/4 line 59 in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':init/4 line 59
+2019-11-29 14:21:13.822 [error] <0.621.0> Lager event handler error_logger_lager_h exited with reason {'EXIT',{{case_clause,['Elixir.RailwayUiWeb.Endpoint.HTTP',<0.898.0>,1,<0.899.0>,{{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 0,function => '__live__',message => nil,module => 'Elixir.RailwayUiWeb.PublishedMessagesLive.Index',reason => nil},[{'Elixir.RailwayUiWeb.PublishedMessagesLive.Index','__live__',[],[]},{'Elixir.Phoenix.LiveView.Static','load_live!',2,[{file,"lib/phoenix_live_view/static.ex"},{line,219}]},{'Elixir.Phoenix.LiveView.Static',render,...},...]},...},...]},...}}
+2019-11-29 14:21:31.234 [error] <0.936.0> CRASH REPORT Process <0.936.0> with 0 neighbours exited with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 2,function => published_message_path,message => nil,module => 'Elixir.RailwayUiWeb.Router.Helpers',reason => nil},[{'Elixir.RailwayUiWeb.Router.Helpers',published_message_path,[#{'__struct__' => 'Elixir.Plug.Conn',adapter => {'Elixir.Plug.Cowboy.Conn',#{bindings => #{},body_length => 0,cert => undefined,has_body => false,headers => #{<<"accept">> => <<"text/html,application/xhtml+xml,application/xml;q=0....">>,...},...}},...},...],...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':init/4 line 59 in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':init/4 line 59
+2019-11-29 14:21:31.248 [error] <0.621.0> Lager event handler error_logger_lager_h exited with reason {'EXIT',{{case_clause,['Elixir.RailwayUiWeb.Endpoint.HTTP',<0.934.0>,1,<0.936.0>,{{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 2,function => published_message_path,message => nil,module => 'Elixir.RailwayUiWeb.Router.Helpers',reason => nil},[{'Elixir.RailwayUiWeb.Router.Helpers',published_message_path,[#{'__struct__' => 'Elixir.Plug.Conn',adapter => {'Elixir.Plug.Cowboy.Conn',#{bindings => #{},body_length => 0,cert => undefined,has_body => false,headers => ...,...}},...},...],...},...]},...},...]},...}}
+2019-11-29 14:21:52.364 [error] <0.959.0> CRASH REPORT Process <0.959.0> with 0 neighbours exited with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 2,function => live_published_message_path,message => nil,module => 'Elixir.RailwayUiWeb.Router.Helpers',reason => nil},[{'Elixir.RailwayUiWeb.Router.Helpers',live_published_message_path,[#{'__struct__' => 'Elixir.Plug.Conn',adapter => {'Elixir.Plug.Cowboy.Conn',#{bindings => #{},body_length => 0,cert => undefined,has_body => false,headers => #{<<"accept">> => <<"text/html,application/xhtml+xml,applicatio...">>,...},...}},...},...],...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':init/4 line 59 in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':init/4 line 59
+2019-11-29 14:21:52.443 [error] <0.621.0> Lager event handler error_logger_lager_h exited with reason {'EXIT',{{case_clause,['Elixir.RailwayUiWeb.Endpoint.HTTP',<0.958.0>,1,<0.959.0>,{{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 2,function => live_published_message_path,message => nil,module => 'Elixir.RailwayUiWeb.Router.Helpers',reason => nil},[{'Elixir.RailwayUiWeb.Router.Helpers',live_published_message_path,[#{'__struct__' => 'Elixir.Plug.Conn',adapter => {'Elixir.Plug.Cowboy.Conn',#{bindings => #{},body_length => 0,cert => undefined,has_body => false,...}},...},...],...},...]},...},...]},...}}
+2019-11-29 14:22:23.738 [error] <0.982.0> CRASH REPORT Process <0.982.0> with 0 neighbours exited with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.ArgumentError',message => <<"no function clause for RailwayUiWeb.Router.Helpers.live_path/2 and action :index. The following actions/clauses are supported:\n\n    live_path(conn_or_endpoint, RailwayUiWeb.PublishedMessagesLive.Index, params \\\\ [])">>},[{'Elixir.Phoenix.Router.Helpers',raise_route_error,6,[{file,"lib/phoenix/router/helpers.ex"},{line,346}]},{'Elixir.RailwayUiWeb.LayoutView','app.html',1,[{file,"lib/railway_ui_web/templates/..."},...]},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':init/4 line 59 in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':init/4 line 59
+2019-11-29 14:22:23.745 [error] <0.621.0> Lager event handler error_logger_lager_h exited with reason {'EXIT',{{case_clause,['Elixir.RailwayUiWeb.Endpoint.HTTP',<0.980.0>,1,<0.982.0>,{{#{'__exception__' => true,'__struct__' => 'Elixir.ArgumentError',message => <<"no function clause for RailwayUiWeb.Router.Helpers.live_path/2 and action :index. The following actions/clauses are supported:\n\n    live_path(conn_or_endpoint, RailwayUiWeb.PublishedMessagesLive.Index, params \\\\ [])">>},[{'Elixir.Phoenix.Router.Helpers',raise_route_error,6,[{file,"lib/phoenix/router/helpers.ex"},{line,346}]},{'Elixir.RailwayUiWeb.LayoutView',...},...]},...},...]},...}}
+2019-11-29 14:28:57.589 [error] <0.1296.0>@Elixir.Phoenix.LiveView.Channel:handle_info:89 gen_server <0.1296.0> terminated with reason: call to undefined function 'Elixir.RailwayUiWeb.PublishedMessagesLive.Index':handle_event/3 from 'Elixir.Phoenix.LiveView.Channel':handle_info/2 line 89
+2019-11-29 14:28:57.594 [error] <0.1296.0>@Elixir.RailwayUiWeb.PublishedMessagesLive.Index:handle_event CRASH REPORT Process <0.1296.0> with 0 neighbours crashed with reason: call to undefined function 'Elixir.RailwayUiWeb.PublishedMessagesLive.Index':handle_event(<<"republish">>, #{<<"altKey">> => false,<<"ctrlKey">> => false,<<"message_uuid">> => <<"#{message.uuid}">>,<<"...">> => ...,...}, #{'__struct__' => 'Elixir.Phoenix.LiveView.Socket',assigns => #{messages => []},changed => #{},'connected?' => ...,...})
+2019-11-29 14:28:57.595 [error] <0.745.0>@Elixir.RailwayUiWeb.PublishedMessagesLive.Index:handle_event Supervisor {<0.745.0>,'Elixir.Phoenix.Socket.PoolSupervisor.WorkerSupervisor'} had child 'Elixir.Phoenix.Channel.Server' started with {'Elixir.Phoenix.Channel.Server',start_link,undefined} at <0.1296.0> exit with reason call to undefined function 'Elixir.RailwayUiWeb.PublishedMessagesLive.Index':handle_event(<<"republish">>, #{<<"altKey">> => false,<<"ctrlKey">> => false,<<"message_uuid">> => <<"#{message.uuid}">>,<<"...">> => ...,...}, #{'__struct__' => 'Elixir.Phoenix.LiveView.Socket',assigns => #{messages => []},changed => #{},'connected?' => ...,...}) in context child_terminated
+2019-11-29 14:30:08.437 [error] <0.1364.0>@Elixir.Phoenix.LiveView.Channel:handle_info:89 gen_server <0.1364.0> terminated with reason: call to undefined function 'Elixir.RailwayUiWeb.PublishedMessagesLive.Index':handle_event/3 from 'Elixir.Phoenix.LiveView.Channel':handle_info/2 line 89
+2019-11-29 14:30:08.439 [error] <0.1364.0>@Elixir.RailwayUiWeb.PublishedMessagesLive.Index:handle_event CRASH REPORT Process <0.1364.0> with 0 neighbours crashed with reason: call to undefined function 'Elixir.RailwayUiWeb.PublishedMessagesLive.Index':handle_event(<<"republish">>, #{<<"altKey">> => false,<<"ctrlKey">> => false,<<"message_uuid">> => <<"45ff7216-4cb6-4590-9bcf-a...">>,...}, #{'__struct__' => 'Elixir.Phoenix.LiveView.Socket',assigns => #{messages => []},changed => #{},'connected?' => ...,...})
+2019-11-29 14:30:08.439 [error] <0.745.0>@Elixir.RailwayUiWeb.PublishedMessagesLive.Index:handle_event Supervisor {<0.745.0>,'Elixir.Phoenix.Socket.PoolSupervisor.WorkerSupervisor'} had child 'Elixir.Phoenix.Channel.Server' started with {'Elixir.Phoenix.Channel.Server',start_link,undefined} at <0.1364.0> exit with reason call to undefined function 'Elixir.RailwayUiWeb.PublishedMessagesLive.Index':handle_event(<<"republish">>, #{<<"altKey">> => false,<<"ctrlKey">> => false,<<"message_uuid">> => <<"45ff7216-4cb6-4590-9bcf-a...">>,...}, #{'__struct__' => 'Elixir.Phoenix.LiveView.Socket',assigns => #{messages => []},changed => #{},'connected?' => ...,...}) in context child_terminated
+2019-11-29 14:30:25.740 [error] <0.1369.0>@Elixir.Phoenix.LiveView.Channel:handle_info:89 gen_server <0.1369.0> terminated with reason: call to undefined function 'Elixir.RailwayUiWeb.PublishedMessagesLive.Index':handle_event/3 from 'Elixir.Phoenix.LiveView.Channel':handle_info/2 line 89
+2019-11-29 14:30:25.741 [error] <0.1369.0>@Elixir.RailwayUiWeb.PublishedMessagesLive.Index:handle_event CRASH REPORT Process <0.1369.0> with 0 neighbours crashed with reason: call to undefined function 'Elixir.RailwayUiWeb.PublishedMessagesLive.Index':handle_event(<<"republish">>, #{<<"altKey">> => false,<<"ctrlKey">> => false,<<"message_uuid">> => <<"45ff7216-4cb6-4590-9bcf-a...">>,...}, #{'__struct__' => 'Elixir.Phoenix.LiveView.Socket',assigns => #{messages => []},changed => #{},'connected?' => ...,...})
+2019-11-29 14:30:25.742 [error] <0.746.0>@Elixir.RailwayUiWeb.PublishedMessagesLive.Index:handle_event Supervisor {<0.746.0>,'Elixir.Phoenix.Socket.PoolSupervisor.WorkerSupervisor'} had child 'Elixir.Phoenix.Channel.Server' started with {'Elixir.Phoenix.Channel.Server',start_link,undefined} at <0.1369.0> exit with reason call to undefined function 'Elixir.RailwayUiWeb.PublishedMessagesLive.Index':handle_event(<<"republish">>, #{<<"altKey">> => false,<<"ctrlKey">> => false,<<"message_uuid">> => <<"45ff7216-4cb6-4590-9bcf-a...">>,...}, #{'__struct__' => 'Elixir.Phoenix.LiveView.Socket',assigns => #{messages => []},changed => #{},'connected?' => ...,...}) in context child_terminated
+2019-11-29 14:48:41.001 [error] <0.1537.0>@Elixir.RailwayUiWeb.PublishedMessagesLive.Index:request_data:23 gen_server <0.1537.0> terminated with reason: no function clause matching 'Elixir.RailwayUiWeb.PublishedMessagesLive.Index':request_data(#{'__struct__' => 'Elixir.Phoenix.LiveView.Socket',assigns => #{current_user => #{learn_uuid => <<...>>},...},...}) line 23
+2019-11-29 14:48:41.029 [error] <0.1537.0>@Elixir.RailwayUiWeb.PublishedMessagesLive.Index:request_data:23 CRASH REPORT Process <0.1537.0> with 0 neighbours crashed with reason: no function clause matching 'Elixir.RailwayUiWeb.PublishedMessagesLive.Index':request_data(#{'__struct__' => 'Elixir.Phoenix.LiveView.Socket',assigns => #{current_user => #{learn_uuid => <<...>>},...},...}) line 23
+2019-11-29 14:48:41.029 [error] <0.744.0>@Elixir.RailwayUiWeb.PublishedMessagesLive.Index:request_data:23 Supervisor {<0.744.0>,'Elixir.Phoenix.Socket.PoolSupervisor.WorkerSupervisor'} had child 'Elixir.Phoenix.Channel.Server' started with {'Elixir.Phoenix.Channel.Server',start_link,undefined} at <0.1537.0> exit with reason no function clause matching 'Elixir.RailwayUiWeb.PublishedMessagesLive.Index':request_data(#{'__struct__' => 'Elixir.Phoenix.LiveView.Socket',assigns => #{current_user => #{learn_uuid => <<...>>},...},...}) line 23 in context child_terminated
+2019-11-29 14:52:54.358 [error] <0.1584.0> CRASH REPORT Process <0.1584.0> with 0 neighbours exited with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.ArgumentError',message => <<"assign @conn not available in eex template.\n\nPlease make sure all proper assigns have been set. If this\nis a child template, ensure assigns are given explicitly by\nthe parent template as they are not automatically forwarded.\n\nAvailable assigns: [:current_user_uuid, :messages, :socket, :view_module, :view_template]\n">>},[{'Elixir.Phoenix.LiveView.Engine','fetch_assign!',2,[{file,"lib/phoenix_live_view/engine.e..."},...]},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':init/4 line 59 in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':init/4 line 59
+2019-11-29 14:52:54.365 [error] <0.621.0> Lager event handler error_logger_lager_h exited with reason {'EXIT',{{case_clause,['Elixir.RailwayUiWeb.Endpoint.HTTP',<0.1582.0>,1,<0.1584.0>,{{#{'__exception__' => true,'__struct__' => 'Elixir.ArgumentError',message => <<"assign @conn not available in eex template.\n\nPlease make sure all proper assigns have been set. If this\nis a child template, ensure assigns are given explicitly by\nthe parent template as they are not automatically forwarded.\n\nAvailable assigns: [:current_user_uuid, :messages, :socket, :view_module, :view_template]\n">>},[{'Elixir.Phoenix.LiveView.Engine',...},...]},...},...]},...}}
+2019-11-29 14:57:32.337 [error] <0.1623.0> CRASH REPORT Process <0.1623.0> with 0 neighbours exited with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.ArgumentError',message => <<"assign @conn not available in eex template.\n\nPlease make sure all proper assigns have been set. If this\nis a child template, ensure assigns are given explicitly by\nthe parent template as they are not automatically forwarded.\n\nAvailable assigns: [:current_user_uuid, :flash, :messages, :socket, :view_module, :view_template]\n">>},[{'Elixir.Phoenix.LiveView.Engine','fetch_assign!',2,[{file,"lib/phoenix_live_view/..."},...]},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':init/4 line 59 in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':init/4 line 59
+2019-11-29 14:57:32.344 [error] <0.621.0> Lager event handler error_logger_lager_h exited with reason {'EXIT',{{case_clause,['Elixir.RailwayUiWeb.Endpoint.HTTP',<0.1621.0>,1,<0.1623.0>,{{#{'__exception__' => true,'__struct__' => 'Elixir.ArgumentError',message => <<"assign @conn not available in eex template.\n\nPlease make sure all proper assigns have been set. If this\nis a child template, ensure assigns are given explicitly by\nthe parent template as they are not automatically forwarded.\n\nAvailable assigns: [:current_user_uuid, :flash, :messages, :socket, :view_module, :view_template]\n">>},[...]},...},...]},...}}
+2019-11-29 15:06:01.039 [info] <0.43.0> Application lager started on node nonode@nohost
+2019-11-29 15:06:01.051 [info] <0.43.0> Application xmerl started on node nonode@nohost
+2019-11-29 15:06:01.056 [info] <0.43.0> Application jsx started on node nonode@nohost
+2019-11-29 15:06:01.069 [info] <0.43.0> Application ranch started on node nonode@nohost
+2019-11-29 15:06:01.072 [info] <0.43.0> Application recon started on node nonode@nohost
+2019-11-29 15:06:01.072 [info] <0.43.0> Application rabbit_common started on node nonode@nohost
+2019-11-29 15:06:01.084 [info] <0.43.0> Application amqp_client started on node nonode@nohost
+2019-11-29 15:06:01.084 [info] <0.43.0> Application amqp started on node nonode@nohost
+2019-11-29 15:06:01.090 [info] <0.43.0> Application elixir_uuid started on node nonode@nohost
+2019-11-29 15:06:01.096 [info] <0.43.0> Application protobuf started on node nonode@nohost
+2019-11-29 15:06:01.100 [info] <0.43.0> Application google_protos started on node nonode@nohost
+2019-11-29 15:06:01.100 [info] <0.43.0> Application railway_ipc started on node nonode@nohost
+2019-11-29 15:06:01.104 [info] <0.43.0> Application phoenix_html started on node nonode@nohost
+2019-11-29 15:06:01.120 [info] <0.43.0> Application cowlib started on node nonode@nohost
+2019-11-29 15:06:01.130 [info] <0.43.0> Application cowboy started on node nonode@nohost
+2019-11-29 15:06:01.130 [info] <0.43.0> Application plug_cowboy started on node nonode@nohost
+2019-11-29 15:06:01.145 [info] <0.43.0> Application file_system started on node nonode@nohost
+2019-11-29 15:06:01.160 [info] <0.43.0> Application phoenix_live_reload started on node nonode@nohost
+2019-11-29 15:06:01.164 [info] <0.43.0> Application phoenix_live_view started on node nonode@nohost
+2019-11-29 15:06:01.180 [info] <0.43.0> Application phoenix_ecto started on node nonode@nohost
+2019-11-29 15:06:02.070 [warning] <0.4474.0> lager_error_logger_h dropped 142 messages in the last second that exceeded the limit of 50 messages/sec
+2019-11-29 15:06:09.585 [error] <0.4731.0> gen_server <0.4731.0> terminated with reason: #{'__exception__' => true,'__struct__' => 'Elixir.Protocol.UndefinedError',description => <<>>,protocol => 'Elixir.String.Chars',value => #{'__exception__' => true,'__struct__' => 'Elixir.Postgrex.Error',connection_id => 28062,message => nil,postgres => #{code => not_null_violation,column => <<"exchange">>,detail => <<"Failing row contains (2fa6084d-b525-4c0f-9064-e20eca56590f, LearnIpc::Commands::RepublishMessage, 1f4c4051-fe12-41cf-a39a-49f794f6b333, d233d296-5d52-4a58-bb69-7fc1af7a74e9, ...">>,...},...}} in 'Elixir.String.Chars':'impl_for!'/1 line 3
+2019-11-29 15:06:09.585 [error] <0.4731.0> CRASH REPORT Process <0.4731.0> with 0 neighbours crashed with reason: #{'__exception__' => true,'__struct__' => 'Elixir.Protocol.UndefinedError',description => <<>>,protocol => 'Elixir.String.Chars',value => #{'__exception__' => true,'__struct__' => 'Elixir.Postgrex.Error',connection_id => 28062,message => nil,postgres => #{code => not_null_violation,column => <<"exchange">>,detail => <<"Failing row contains (2fa6084d-b525-4c0f-9064-e20eca56590f, LearnIpc::Commands::RepublishMessage, 1f4c4051-fe12-41cf-a39a-49f794f6b333, d233d296-5d52-4a58-bb69-7fc1af7a74e9, ...">>,...},...}} in 'Elixir.String.Chars':'impl_for!'/1 line 3
+2019-11-29 15:06:09.586 [error] <0.4588.0> Supervisor {<0.4588.0>,'Elixir.Phoenix.Socket.PoolSupervisor.WorkerSupervisor'} had child 'Elixir.Phoenix.Channel.Server' started with {'Elixir.Phoenix.Channel.Server',start_link,undefined} at <0.4731.0> exit with reason #{'__exception__' => true,'__struct__' => 'Elixir.Protocol.UndefinedError',description => <<>>,protocol => 'Elixir.String.Chars',value => #{'__exception__' => true,'__struct__' => 'Elixir.Postgrex.Error',connection_id => 28062,message => nil,postgres => #{code => not_null_violation,column => <<"exchange">>,detail => <<"Failing row contains (2fa6084d-b525-4c0f-9064-e20eca56590f, LearnIpc::Commands::RepublishMessage, 1f4c4051-fe12-41cf-a39a-49f794f6b333, d233d296-5d52-4a58-bb69-7fc1af7a74e9, ...">>,...},...}} in 'Elixir.String.Chars':'impl_for!'/1 line 3 in context child_terminated
+2019-11-29 15:10:29.725 [error] <0.4824.0> CRASH REPORT Process <0.4824.0> with 0 neighbours exited with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 2,function => published_message_path,message => nil,module => 'Elixir.RailwayUiWeb.Router.Helpers',reason => nil},[{'Elixir.RailwayUiWeb.Router.Helpers',published_message_path,[#{'__struct__' => 'Elixir.Plug.Conn',adapter => {'Elixir.Plug.Cowboy.Conn',#{bindings => #{},body_length => 0,cert => undefined,has_body => false,headers => #{<<"accept">> => <<"text/html,application/xhtml+xml,application/xml;q=0....">>,...},...}},...},...],...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':init/4 line 59 in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':init/4 line 59
+2019-11-29 15:10:29.825 [error] <0.4476.0> Lager event handler error_logger_lager_h exited with reason {'EXIT',{{case_clause,['Elixir.RailwayUiWeb.Endpoint.HTTP',<0.4822.0>,1,<0.4824.0>,{{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 2,function => published_message_path,message => nil,module => 'Elixir.RailwayUiWeb.Router.Helpers',reason => nil},[{'Elixir.RailwayUiWeb.Router.Helpers',published_message_path,[#{'__struct__' => 'Elixir.Plug.Conn',adapter => {'Elixir.Plug.Cowboy.Conn',#{bindings => #{},body_length => 0,cert => undefined,has_body => false,...}},...},...],...},...]},...},...]},...}}

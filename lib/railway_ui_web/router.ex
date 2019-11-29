@@ -5,8 +5,12 @@ defmodule RailwayUiWeb.Router do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_flash
+    plug Phoenix.LiveView.Flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    if Mix.env() == :dev do
+      plug(RailwayUiWeb.CurrentUser)
+    end
   end
 
   pipeline :api do
@@ -17,7 +21,7 @@ defmodule RailwayUiWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
-    get "/published_messages", PublishedMessageController, :index
+    live "/published_messages", PublishedMessagesLive.Index, session: [:current_user_uuid]
     get "/consumed_messages", ConsumedMessageController, :index
   end
 

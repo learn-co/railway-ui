@@ -47,10 +47,13 @@ defmodule RailwayUi.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:railway_ipc, "0.1.6"},
+      # {:railway_ipc, "0.1.6"},
+      {:railway_ipc, path: "../railway_ipc"},
       {:ex_machina, "~> 2.3", only: :test},
+      {:phoenix_live_view, "~> 0.4.0"},
+      {:floki, ">= 0.0.0", only: :test},
       {:mox, "~> 0.5", only: :test},
-      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false} 
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
     ]
   end
 

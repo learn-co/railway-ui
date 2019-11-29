@@ -15,7 +15,10 @@ config :railway_ui, RailwayUiWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "r+27+XkFRv3Cev7AgigTQ9GXu5cfqs4t7iajQEUUiiyeLyn7P6GbKgLyHZqPJiTW",
   render_errors: [view: RailwayUiWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: RailwayUi.PubSub, adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: RailwayUi.PubSub, adapter: Phoenix.PubSub.PG2],
+  live_view: [
+     signing_salt: "uDL6Qut/yFMvUAwKevgIOBMf7gJOf1eRJdd8ZbGzviaRhan4kuQv+9BsDWqrq1/j"
+   ]
 
 # Configures Elixir's Logger
 config :logger, :console,
@@ -25,7 +28,7 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 config :railway_ipc, repo: RailwayUi.Repo
-config :railway_ipc, dev_repo: true
+config :railway_ui, dev_repo: true
 config :railway_ui, persistence: RailwayUi.Persistence
 
 # Import environment specific config. This must remain at the bottom
