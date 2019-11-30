@@ -1,5 +1,5 @@
 defmodule RailwayUiWeb.PublishedMessageLive.Index do
-  alias RailwayUiWeb.PublishedMessageLive.Index.Data
+  alias RailwayUiWeb.PublishedMessageLive.Index.State
   alias RailwayUiWeb.Router.Helpers, as: Routes
   @railway_ipc Application.get_env(:railway_ui, :railway_ipc, RailwayIpc)
 
@@ -12,10 +12,23 @@ defmodule RailwayUiWeb.PublishedMessageLive.Index do
   def mount(%{current_user_uuid: current_user_uuid}, socket) do
     socket =
       socket
-      |> assign(:messages, Data.load_messages())
-      |> assign(:data, Data.new(current_user_uuid))
+      |> assign(:messages, State.load_messages())
+      |> assign(:data, State.new(current_user_uuid))
 
     {:ok, socket, temporary_assigns: [messages: []]}
+  end
+
+  def handle_params(
+        %{"page" => page_num, "search" => %{"query" => query, "value" => value}},
+        _uri,
+        %{assigns: %{data: data}} = socket
+      ) do
+    socket =
+      socket
+      |> assign(:data, State.for_search(data, query, value, page_num))
+      |> assign(:messages, State.messages_search(query, value, page_num))
+
+    {:noreply, socket}
   end
 
   def handle_params(
@@ -25,8 +38,8 @@ defmodule RailwayUiWeb.PublishedMessageLive.Index do
       ) do
     socket =
       socket
-      |> assign(:messages, Data.messages_page(page_num))
-      |> assign(:data, Data.set_page(data, page_num))
+      |> assign(:data, State.set_page(data, page_num))
+      |> assign(:messages, State.messages_page(page_num))
 
     {:noreply, socket}
   end
@@ -38,17 +51,22 @@ defmodule RailwayUiWeb.PublishedMessageLive.Index do
       ) do
     socket =
       socket
-      |> assign(:data, Data.set_query_info(data, query, value))
-      |> assign(:messages, Data.messages_search(query, value))
+      |> assign(:data, State.for_search(data, query, value))
+      |> assign(:messages, State.messages_search(query, value))
 
     {:noreply, socket}
   end
 
-  def handle_params(_params, _, %{assigns: %{data: %{current_user_uuid: current_user_uuid}}} = socket) do
+  def handle_params(
+        _params,
+        _,
+        %{assigns: %{data: %{current_user_uuid: current_user_uuid}}} = socket
+      ) do
     socket =
       socket
-      |> assign(:messages, Data.load_messages())
-      |> assign(:data, Data.new(current_user_uuid))
+      |> assign(:data, State.new(current_user_uuid))
+      |> assign(:messages, State.load_messages())
+
     {:noreply, socket}
   end
 
@@ -60,8 +78,7 @@ defmodule RailwayUiWeb.PublishedMessageLive.Index do
   end
 
   def handle_event("search_by", %{"query" => query}, %{assigns: %{data: data}} = socket) do
-    {:noreply,
-     assign(socket, :data, Data.set_query_filter(data, query))}
+    {:noreply, assign(socket, :data, State.set_search(data, query))}
   end
 
   def handle_event(
@@ -69,12 +86,12 @@ defmodule RailwayUiWeb.PublishedMessageLive.Index do
         %{"message_uuid" => message_uuid},
         %{assigns: %{data: data}} = socket
       ) do
-    case @railway_ipc.republish_message(message_uuid, Data.request_data(data)) do
+    case @railway_ipc.republish_message(message_uuid, State.request_data(data)) do
       :ok ->
-        {:noreply, assign(socket, :data, Data.flash_success(data, message_uuid))}
+        {:noreply, assign(socket, :data, State.flash_success(data, message_uuid))}
 
       {:error, error} ->
-        {:noreply, assign(socket, :data, Data.flash_error(data, message_uuid, error))}
+        {:noreply, assign(socket, :data, State.flash_error(data, message_uuid, error))}
     end
   end
 end

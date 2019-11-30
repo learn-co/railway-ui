@@ -8,11 +8,6 @@ defmodule RailwayUi.Persistence do
     |> @repo.all()
   end
 
-  def get_published_messages(%{limit: limit, page: "1"}) do
-    PublishedMessage
-    |> get_messages(limit)
-  end
-
   def get_published_messages(%{limit: limit, page: page}) do
     PublishedMessage
     |> get_messages(limit, page)
@@ -23,10 +18,14 @@ defmodule RailwayUi.Persistence do
     |> get_count()
   end
 
-  def search_published_messages(query_filter, query_value) do
-    filter = Keyword.new([{String.to_atom(query_filter), query_value}])
+  def count_published_message_search_results(query_filter, query_value) do
+    search_query(PublishedMessage, query_filter, query_value)
+    |> get_count()
+  end
 
-    Ecto.Query.from(m in PublishedMessage, where: ^filter)
+  def search_published_messages(query_filter, query_value, %{limit: limit, page: page}) do
+    search_query(PublishedMessage, query_filter, query_value)
+    |> pagination_query(limit, page)
     |> @repo.all()
   end
 
@@ -35,20 +34,25 @@ defmodule RailwayUi.Persistence do
     |> @repo.aggregate(:count, :uuid)
   end
 
-  defp get_messages(struct, limit) do
-    struct
-    |> Ecto.Query.limit(^limit)
-    |> @repo.all()
-  end
-
   defp get_messages(struct, limit, page) do
     struct
-    |> Ecto.Query.limit(^limit)
-    |> Ecto.Query.offset(^calculate_offset(page))
+    |> pagination_query(limit, page)
     |> @repo.all()
   end
 
   defp calculate_offset(page) do
-    (String.to_integer(page) - 1) * 2
+    (page - 1) * 2
+  end
+
+  defp search_query(struct, query_filter, query_value) do
+    filter = Keyword.new([{String.to_atom(query_filter), query_value}])
+
+    Ecto.Query.from(m in struct, where: ^filter)
+  end
+
+  defp pagination_query(query, limit, page) do
+    query
+    |> Ecto.Query.limit(^limit)
+    |> Ecto.Query.offset(^calculate_offset(page))
   end
 end
