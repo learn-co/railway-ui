@@ -1,5 +1,6 @@
 defmodule RailwayUiWeb.PublishedMessagesLive.Index do
   alias RailwayUi.PublishedMessage
+  @railway_ipc Application.get_env(:railway_ui, :railway_ipc, RailwayIpc)
 
   use Phoenix.LiveView
 
@@ -17,7 +18,7 @@ defmodule RailwayUiWeb.PublishedMessagesLive.Index do
   end
 
   def handle_event("republish", %{"message_uuid" => message_uuid}, socket) do
-    case RailwayIpc.republish_message(message_uuid, request_data(socket)) do
+    case @railway_ipc.republish_message(message_uuid, request_data(socket)) do
       :ok ->
         {:noreply, assign(socket, :flash, %{info: "Successfully republished message #{message_uuid}!"})}
 
