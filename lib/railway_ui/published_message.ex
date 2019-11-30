@@ -12,4 +12,8 @@ defmodule RailwayUi.PublishedMessage do
     |> Float.ceil()
     |> Kernel.trunc()
   end
+
+  def search(query_filter, query_value) do
+    @persistence.search_published_messages(query_filter, query_value)
+  end
 end

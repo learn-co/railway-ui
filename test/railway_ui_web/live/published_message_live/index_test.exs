@@ -72,6 +72,7 @@ defmodule RailwayUiWeb.PublishedMessageLive.IndexTest do
     assert html =~ Enum.at(published_messages, 2).uuid
     assert html =~ Enum.at(published_messages, 3).uuid
   end
+
   #
   # test "it searches by UUID", %{
   #   view: view,

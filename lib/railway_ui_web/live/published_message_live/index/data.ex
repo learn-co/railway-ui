@@ -1,13 +1,15 @@
 defmodule RailwayUiWeb.PublishedMessageLive.Index.Data do
   alias RailwayUi.PublishedMessage
-  defstruct [:current_user_uuid, :flash, :page, :page_nums]
+  defstruct [:current_user_uuid, :flash, :page, :page_nums, :query_filter, :query_value]
 
   def new(current_user_uuid) do
     %__MODULE__{
       flash: %{},
       current_user_uuid: current_user_uuid,
       page: 1,
-      page_nums: PublishedMessage.page_nums()
+      page_nums: PublishedMessage.page_nums(),
+      query_filter: nil,
+      query_value: nil,
     }
   end
 
@@ -16,7 +18,9 @@ defmodule RailwayUiWeb.PublishedMessageLive.Index.Data do
       flash: %{},
       current_user_uuid: current_user_uuid,
       page: 1,
-      page_nums: PublishedMessage.page_nums()
+      page_nums: PublishedMessage.page_nums(),
+      query_filter: nil,
+      query_value: nil
     }
   end
 
@@ -24,10 +28,22 @@ defmodule RailwayUiWeb.PublishedMessageLive.Index.Data do
     PublishedMessage.all(page_num)
   end
 
+  def messages_search(query_filter, query_value) do
+    PublishedMessage.search(query_filter, query_value)
+  end
+
   def set_page(data, page_num) do
     update(data, %{page: String.to_integer(page_num)})
   end
 
+  def set_query_info(data, query_filter, query_value) do
+    update(data, %{query_filter: query_filter, query_value: query_value})
+  end
+
+  def set_query_filter(data, query_filter) do
+    update(data, %{query_filter: query_filter})
+  end
+  
   def load_messages do
     PublishedMessage.all()
   end

@@ -1,6 +1,5 @@
 defmodule RailwayUi.Persistence do
   require Ecto.Query
-  @limit 2
   @repo Application.get_env(:railway_ipc, :repo)
   alias RailwayIpc.Persistence.{PublishedMessage, ConsumedMessage}
 
@@ -22,6 +21,13 @@ defmodule RailwayUi.Persistence do
   def published_messages_count do
     Ecto.Query.from(m in PublishedMessage)
     |> get_count()
+  end
+
+  def search_published_messages(query_filter, query_value) do
+    filter = Keyword.new([{String.to_atom(query_filter), query_value}])
+
+    Ecto.Query.from(m in PublishedMessage, where: ^filter)
+    |> @repo.all()
   end
 
   defp get_count(query) do
