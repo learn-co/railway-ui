@@ -14,8 +14,13 @@ defmodule RailwayUiWeb.PublishedMessageLive.IndexTest do
     published_message = build(:published_message)
 
     RailwayUi.PersistenceMock
-    |> stub(:get_published_messages, fn ->
+    |> stub(:get_published_messages, fn _params ->
       [published_message]
+    end)
+
+    RailwayUi.PersistenceMock
+    |> stub(:published_messages_count, fn ->
+      1
     end)
 
     conn =

@@ -11,9 +11,26 @@ defmodule RailwayUiWeb.PublishedMessageLive.Index do
   def mount(%{current_user_uuid: current_user_uuid}, socket) do
     socket =
       socket
+      |> assign(:messages, Data.load_messages())
       |> assign(:data, Data.new(current_user_uuid))
 
-    {:ok, socket, temporary_assigns: [data: Data.reset_messages(current_user_uuid)]}
+    {:ok, socket, temporary_assigns: [messages: []]}
+  end
+
+  def handle_params(
+        %{"page" => page_num},
+        _uri,
+        %{assigns: %{data: data}} = socket
+      ) do
+    socket =
+      socket
+      |> assign(:messages, Data.messages_page(page_num))
+      |> assign(:data, Data.set_page(data, page_num))
+    {:noreply, socket}
+  end
+
+  def handle_params(_, _, socket) do
+    {:noreply, socket}
   end
 
   def handle_event(
