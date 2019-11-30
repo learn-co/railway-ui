@@ -1,5 +1,5 @@
 <main role="main" class="container">
-  <%= Enum.map(@flash, fn {flash_key, flash_message} -> %>
+  <%= Enum.map(@data.flash, fn {flash_key, flash_message} -> %>
     <%= if flash_key == :error do %>
       <p class="alert alert-dismissible fade show alert-danger"><%= flash_message %>
     <% else %>
@@ -29,7 +29,7 @@
         </tr>
       </thead>
       <tbody>
-        <%= for message <- @messages do %>
+        <%= for message <- @data.messages do %>
           <tr>
             <td><%= message.message_type %></td>
             <td><%= message.uuid %></td>

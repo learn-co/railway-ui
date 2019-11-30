@@ -33,7 +33,7 @@ defmodule Seeder do
 
   def seed do
     for i <- 0..10, i > 0 do
-      IO.puts "inserting messages #{i}"
+      IO.puts("inserting messages #{i}")
       @repo.insert(consumed_message_factory())
       @repo.insert(published_message_factory())
     end

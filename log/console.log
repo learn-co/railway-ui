@@ -607,3 +607,47 @@
 2019-11-30 07:53:54.052 [error] <0.548.0>@Elixir.RailwayUiWeb.PublishedMessagesLive.Index:handle_event:20 gen_server <0.548.0> terminated with reason: no function clause matching 'Elixir.RailwayUiWeb.PublishedMessagesLive.Index':handle_event(<<"republish">>, #{<<"published_message_uuid">> => <<"eb41f789-fde6-4152-b130-0cac11c7e034">>}, #{'__struct__' => 'Elixir.Phoenix.LiveView.Socket',assigns => #{current_user_uuid => <<"c07a9c36...">>,...},...}) line 20
 2019-11-30 07:53:54.076 [error] <0.548.0>@Elixir.RailwayUiWeb.PublishedMessagesLive.Index:handle_event:20 CRASH REPORT Process <0.548.0> with 0 neighbours crashed with reason: no function clause matching 'Elixir.RailwayUiWeb.PublishedMessagesLive.Index':handle_event(<<"republish">>, #{<<"published_message_uuid">> => <<"eb41f789-fde6-4152-b130-0cac11c7e034">>}, #{'__struct__' => 'Elixir.Phoenix.LiveView.Socket',assigns => #{current_user_uuid => <<"c07a9c36...">>,...},...}) line 20
 2019-11-30 07:53:54.076 [error] <0.434.0>@Elixir.RailwayUiWeb.PublishedMessagesLive.Index:handle_event:20 Supervisor 'Elixir.Phoenix.LiveView.DynamicSupervisor' had child undefined started with {'Elixir.Phoenix.LiveView.Channel',start_link,undefined} at <0.548.0> exit with reason no function clause matching 'Elixir.RailwayUiWeb.PublishedMessagesLive.Index':handle_event(<<"republish">>, #{<<"published_message_uuid">> => <<"eb41f789-fde6-4152-b130-0cac11c7e034">>}, #{'__struct__' => 'Elixir.Phoenix.LiveView.Socket',assigns => #{current_user_uuid => <<"c07a9c36...">>,...},...}) line 20 in context child_terminated
+2019-11-30 08:10:51.580 [info] <0.43.0> Application lager started on node nonode@nohost
+2019-11-30 08:10:51.589 [info] <0.43.0> Application xmerl started on node nonode@nohost
+2019-11-30 08:10:51.593 [info] <0.43.0> Application jsx started on node nonode@nohost
+2019-11-30 08:10:51.600 [info] <0.43.0> Application ranch started on node nonode@nohost
+2019-11-30 08:10:51.603 [info] <0.43.0> Application recon started on node nonode@nohost
+2019-11-30 08:10:51.603 [info] <0.43.0> Application rabbit_common started on node nonode@nohost
+2019-11-30 08:10:51.610 [info] <0.43.0> Application amqp_client started on node nonode@nohost
+2019-11-30 08:10:51.612 [info] <0.43.0> Application amqp started on node nonode@nohost
+2019-11-30 08:10:51.616 [info] <0.43.0> Application elixir_uuid started on node nonode@nohost
+2019-11-30 08:10:51.619 [info] <0.43.0> Application protobuf started on node nonode@nohost
+2019-11-30 08:10:51.623 [info] <0.43.0> Application google_protos started on node nonode@nohost
+2019-11-30 08:10:51.630 [info] <0.43.0> Application railway_ipc started on node nonode@nohost
+2019-11-30 08:10:51.634 [info] <0.43.0> Application phoenix_html started on node nonode@nohost
+2019-11-30 08:10:51.647 [info] <0.43.0> Application cowlib started on node nonode@nohost
+2019-11-30 08:10:51.657 [info] <0.43.0> Application cowboy started on node nonode@nohost
+2019-11-30 08:10:51.659 [info] <0.43.0> Application plug_cowboy started on node nonode@nohost
+2019-11-30 08:10:51.665 [info] <0.43.0> Application phoenix_live_view started on node nonode@nohost
+2019-11-30 08:10:51.671 [info] <0.43.0> Application phoenix_ecto started on node nonode@nohost
+2019-11-30 08:10:52.009 [warning] <0.389.0> lager_error_logger_h dropped 31 messages in the last second that exceeded the limit of 50 messages/sec
+2019-11-30 08:10:52.109 [error] <0.562.0> gen_server <0.562.0> terminated with reason: {#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 3,function => get_and_update,message => nil,module => 'Elixir.RailwayUiWeb.PublishedMessageLive.Index.Data',reason => <<"RailwayUiWeb.PublishedMessageLive.Index.Data does not implement the Access behaviour">>},[{'Elixir.RailwayUiWeb.PublishedMessageLive.Index.Data',get_and_update,[#{'__struct__' => 'Elixir.RailwayUiWeb.PublishedMessageLive.Index.Data',current_user_uuid => <<"395c620b-752b-4632-bff8-16972b5f3...">>,...},...],...},...]}
+2019-11-30 08:10:52.133 [error] <0.562.0> CRASH REPORT Process <0.562.0> with 0 neighbours crashed with reason: {#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 3,function => get_and_update,message => nil,module => 'Elixir.RailwayUiWeb.PublishedMessageLive.Index.Data',reason => <<"RailwayUiWeb.PublishedMessageLive.Index.Data does not implement the Access behaviour">>},[{'Elixir.RailwayUiWeb.PublishedMessageLive.Index.Data',get_and_update,[#{'__struct__' => 'Elixir.RailwayUiWeb.PublishedMessageLive.Index.Data',current_user_uuid => <<"395c620b-752b-4632-bff8-16972b5f3...">>,...},...],...},...]}
+2019-11-30 08:10:52.133 [error] <0.448.0> Supervisor 'Elixir.Phoenix.LiveView.DynamicSupervisor' had child undefined started with {'Elixir.Phoenix.LiveView.Channel',start_link,undefined} at <0.562.0> exit with reason {#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 3,function => get_and_update,message => nil,module => 'Elixir.RailwayUiWeb.PublishedMessageLive.Index.Data',reason => <<"RailwayUiWeb.PublishedMessageLive.Index.Data does not implement the Access behaviour">>},[{'Elixir.RailwayUiWeb.PublishedMessageLive.Index.Data',get_and_update,[#{'__struct__' => 'Elixir.RailwayUiWeb.PublishedMessageLive.Index.Data',current_user_uuid => <<"395c620b-752b-4632-bff8-16972b5f3...">>,...},...],...},...]} in context child_terminated
+2019-11-30 08:14:02.711 [info] <0.43.0> Application lager started on node nonode@nohost
+2019-11-30 08:14:02.720 [info] <0.43.0> Application xmerl started on node nonode@nohost
+2019-11-30 08:14:02.724 [info] <0.43.0> Application jsx started on node nonode@nohost
+2019-11-30 08:14:02.731 [info] <0.43.0> Application ranch started on node nonode@nohost
+2019-11-30 08:14:02.734 [info] <0.43.0> Application recon started on node nonode@nohost
+2019-11-30 08:14:02.734 [info] <0.43.0> Application rabbit_common started on node nonode@nohost
+2019-11-30 08:14:02.740 [info] <0.43.0> Application amqp_client started on node nonode@nohost
+2019-11-30 08:14:02.743 [info] <0.43.0> Application amqp started on node nonode@nohost
+2019-11-30 08:14:02.746 [info] <0.43.0> Application elixir_uuid started on node nonode@nohost
+2019-11-30 08:14:02.749 [info] <0.43.0> Application protobuf started on node nonode@nohost
+2019-11-30 08:14:02.753 [info] <0.43.0> Application google_protos started on node nonode@nohost
+2019-11-30 08:14:02.760 [info] <0.43.0> Application railway_ipc started on node nonode@nohost
+2019-11-30 08:14:02.764 [info] <0.43.0> Application phoenix_html started on node nonode@nohost
+2019-11-30 08:14:02.777 [info] <0.43.0> Application cowlib started on node nonode@nohost
+2019-11-30 08:14:02.787 [info] <0.43.0> Application cowboy started on node nonode@nohost
+2019-11-30 08:14:02.790 [info] <0.43.0> Application plug_cowboy started on node nonode@nohost
+2019-11-30 08:14:02.795 [info] <0.43.0> Application phoenix_live_view started on node nonode@nohost
+2019-11-30 08:14:02.800 [info] <0.43.0> Application phoenix_ecto started on node nonode@nohost
+2019-11-30 08:14:03.011 [warning] <0.384.0> lager_error_logger_h dropped 31 messages in the last second that exceeded the limit of 50 messages/sec
+2019-11-30 08:14:03.144 [error] <0.553.0> gen_server <0.553.0> terminated with reason: {#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 3,function => get_and_update,message => nil,module => 'Elixir.RailwayUiWeb.PublishedMessageLive.Index.Data',reason => <<"RailwayUiWeb.PublishedMessageLive.Index.Data does not implement the Access behaviour">>},[{'Elixir.RailwayUiWeb.PublishedMessageLive.Index.Data',get_and_update,[#{'__struct__' => 'Elixir.RailwayUiWeb.PublishedMessageLive.Index.Data',current_user_uuid => <<"23946573-bef2-447d-bb2e-f76e91e33...">>,...},...],...},...]}
+2019-11-30 08:14:03.159 [error] <0.553.0> CRASH REPORT Process <0.553.0> with 0 neighbours crashed with reason: {#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 3,function => get_and_update,message => nil,module => 'Elixir.RailwayUiWeb.PublishedMessageLive.Index.Data',reason => <<"RailwayUiWeb.PublishedMessageLive.Index.Data does not implement the Access behaviour">>},[{'Elixir.RailwayUiWeb.PublishedMessageLive.Index.Data',get_and_update,[#{'__struct__' => 'Elixir.RailwayUiWeb.PublishedMessageLive.Index.Data',current_user_uuid => <<"23946573-bef2-447d-bb2e-f76e91e33...">>,...},...],...},...]}
+2019-11-30 08:14:03.159 [error] <0.443.0> Supervisor 'Elixir.Phoenix.LiveView.DynamicSupervisor' had child undefined started with {'Elixir.Phoenix.LiveView.Channel',start_link,undefined} at <0.553.0> exit with reason {#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 3,function => get_and_update,message => nil,module => 'Elixir.RailwayUiWeb.PublishedMessageLive.Index.Data',reason => <<"RailwayUiWeb.PublishedMessageLive.Index.Data does not implement the Access behaviour">>},[{'Elixir.RailwayUiWeb.PublishedMessageLive.Index.Data',get_and_update,[#{'__struct__' => 'Elixir.RailwayUiWeb.PublishedMessageLive.Index.Data',current_user_uuid => <<"23946573-bef2-447d-bb2e-f76e91e33...">>,...},...],...},...]} in context child_terminated

@@ -23,17 +23,32 @@ defmodule RailwayUiWeb.PublishedMessageLive.IndexTest do
       |> init_test_session(%{current_user_uuid: current_user_uuid})
 
     {:ok, view, html} = live(conn, "/published_messages")
-    [view: view, html: html, published_message: published_message, current_user_uuid: current_user_uuid]
+
+    [
+      view: view,
+      html: html,
+      published_message: published_message,
+      current_user_uuid: current_user_uuid
+    ]
   end
 
   test "connected mount", %{html: html} do
     assert html =~ "Published Messages"
   end
 
-  test "republish message", %{view: view, published_message: published_message, current_user_uuid: current_user_uuid} do
+  test "republish message", %{
+    view: view,
+    published_message: published_message,
+    current_user_uuid: current_user_uuid
+  } do
     published_message_uuid = published_message.uuid
+
     RailwayIpcMock
-    |> expect(:republish_message, fn ^published_message_uuid, %{correlation_id: _correlation_id, current_user: %{learn_uuid: ^current_user_uuid}} ->
+    |> expect(:republish_message, fn ^published_message_uuid,
+                                     %{
+                                       correlation_id: _correlation_id,
+                                       current_user: %{learn_uuid: ^current_user_uuid}
+                                     } ->
       :ok
     end)
 

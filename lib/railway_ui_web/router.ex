@@ -8,6 +8,7 @@ defmodule RailwayUiWeb.Router do
     plug Phoenix.LiveView.Flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+
     if Mix.env() == :dev do
       plug(RailwayUiWeb.CurrentUser)
     end
@@ -21,7 +22,7 @@ defmodule RailwayUiWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
-    live "/published_messages", PublishedMessagesLive.Index, session: [:current_user_uuid]
+    live "/published_messages", PublishedMessageLive.Index, session: [:current_user_uuid]
     get "/consumed_messages", ConsumedMessageController, :index
   end
 

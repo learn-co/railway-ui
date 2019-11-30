@@ -32,9 +32,17 @@ defmodule RailwayUiWeb do
       use Phoenix.View,
         root: "lib/railway_ui_web/templates",
         namespace: RailwayUiWeb
+
       import Phoenix.LiveView,
-      only: [live_render: 2, live_render: 3, live_link: 1, live_link: 2,
-               live_component: 2, live_component: 3, live_component: 4]
+        only: [
+          live_render: 2,
+          live_render: 3,
+          live_link: 1,
+          live_link: 2,
+          live_component: 2,
+          live_component: 3,
+          live_component: 4
+        ]
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 1, get_flash: 2, view_module: 1]

@@ -17,8 +17,8 @@ config :railway_ui, RailwayUiWeb.Endpoint,
   render_errors: [view: RailwayUiWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: RailwayUi.PubSub, adapter: Phoenix.PubSub.PG2],
   live_view: [
-     signing_salt: "uDL6Qut/yFMvUAwKevgIOBMf7gJOf1eRJdd8ZbGzviaRhan4kuQv+9BsDWqrq1/j"
-   ]
+    signing_salt: "uDL6Qut/yFMvUAwKevgIOBMf7gJOf1eRJdd8ZbGzviaRhan4kuQv+9BsDWqrq1/j"
+  ]
 
 # Configures Elixir's Logger
 config :logger, :console,
