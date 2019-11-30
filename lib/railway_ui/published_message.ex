@@ -8,7 +8,7 @@ defmodule RailwayUi.PublishedMessage do
   end
 
   def page_nums do
-    @persistence.published_messages_count() / @limit
+    (@persistence.published_messages_count() / @limit)
     |> Float.ceil()
     |> Kernel.trunc()
   end

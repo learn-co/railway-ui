@@ -11,16 +11,20 @@ defmodule RailwayUiWeb.PublishedMessageLive.IndexTest do
 
   setup do
     current_user_uuid = Ecto.UUID.generate()
-    published_message = build(:published_message)
+
+    published_messages =
+      Enum.map(0..10, fn _num ->
+        build(:published_message)
+      end)
 
     RailwayUi.PersistenceMock
     |> stub(:get_published_messages, fn _params ->
-      [published_message]
+      published_messages
     end)
 
     RailwayUi.PersistenceMock
     |> stub(:published_messages_count, fn ->
-      1
+      10
     end)
 
     conn =
@@ -32,7 +36,7 @@ defmodule RailwayUiWeb.PublishedMessageLive.IndexTest do
     [
       view: view,
       html: html,
-      published_message: published_message,
+      published_messages: published_messages,
       current_user_uuid: current_user_uuid
     ]
   end
@@ -43,10 +47,10 @@ defmodule RailwayUiWeb.PublishedMessageLive.IndexTest do
 
   test "republish message", %{
     view: view,
-    published_message: published_message,
+    published_messages: published_messages,
     current_user_uuid: current_user_uuid
   } do
-    published_message_uuid = published_message.uuid
+    published_message_uuid = List.first(published_messages).uuid
 
     RailwayIpcMock
     |> expect(:republish_message, fn ^published_message_uuid,
@@ -61,15 +65,13 @@ defmodule RailwayUiWeb.PublishedMessageLive.IndexTest do
     assert html =~ "Successfully republished message"
   end
 
-  # test "it sorts by name", %{view: view} do
-  #   assert render_live_link(view, "/cohorts?sort_by=name&order=desc") =~
-  #            "<th>Name<a data-phx-live-link=\"push\" href=\"/cohorts?order=asc&sort_by=name\" style=\"text-decoration: none\" to=\"/cohorts?order=asc&sort_by=name\">    ⤓</a></th>"
-  # end
-  #
-  # test "it sorts by course offering", %{view: view} do
-  #   assert render_live_link(view, "/cohorts?sort_by=course_offering&order=desc") =~
-  #            "<th>Course Offering<a data-phx-live-link=\"push\" href=\"/cohorts?order=asc&sort_by=course_offering\" style=\"text-decoration: none\" to=\"/cohorts?order=asc&sort_by=course_offering\">    ⤓</a></th>"
-  # end
+  test "it paginates", %{html: html, view: view, published_messages: published_messages} do
+    assert html != Enum.at(published_messages, 2).uuid
+    assert html != Enum.at(published_messages, 3).uuid
+    html = render_live_link(view, "/published_messages?page=2")
+    assert html =~ Enum.at(published_messages, 2).uuid
+    assert html =~ Enum.at(published_messages, 3).uuid
+  end
   #
   # test "it searches by UUID", %{
   #   view: view,

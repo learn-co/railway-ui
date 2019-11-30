@@ -26,6 +26,7 @@ defmodule RailwayUiWeb.PublishedMessageLive.Index do
       socket
       |> assign(:messages, Data.messages_page(page_num))
       |> assign(:data, Data.set_page(data, page_num))
+
     {:noreply, socket}
   end
 
