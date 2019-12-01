@@ -9,14 +9,14 @@ defmodule RailwayUiWeb.PublishedMessageLive.Index do
   def handle_event(
         "republish",
         %{"message_uuid" => message_uuid},
-        %{assigns: %{data: data}} = socket
+        %{assigns: %{state: state}} = socket
       ) do
-    case @railway_ipc.republish_message(message_uuid, State.request_data(data)) do
+    case @railway_ipc.republish_message(message_uuid, State.request_data(state)) do
       :ok ->
-        {:noreply, assign(socket, :data, State.flash_success(data, message_uuid))}
+        {:noreply, assign(socket, :state, State.flash_success(state, message_uuid))}
 
       {:error, error} ->
-        {:noreply, assign(socket, :data, State.flash_error(data, message_uuid, error))}
+        {:noreply, assign(socket, :state, State.flash_error(state, message_uuid, error))}
     end
   end
 end

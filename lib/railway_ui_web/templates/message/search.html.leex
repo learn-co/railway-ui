@@ -4,20 +4,20 @@
     <form phx-submit="search">
       <div class="form-group">
         <div class="form-check form-check-inline">
-          <input phx-click="search_by" phx-value-query="uuid" name="search[query]" value="uuid" class="form-check-input" type="checkbox" id="inlineCheckbox1" <%= if @data.search.query == "uuid", do: "checked" %>>
+          <input phx-click="search_by" phx-value-query="uuid" name="search[query]" value="uuid" class="form-check-input" type="checkbox" id="inlineCheckbox1" <%= if @state.search.query == "uuid", do: "checked" %>>
           <label class="form-check-label" for="inlineCheckbox1">message UUID</label>
         </div>
         <div class="form-check form-check-inline">
-          <input phx-click="search_by" phx-value-query="correlation_id" name="search[query]" value="correlation_id" class="form-check-input" type="checkbox" id="inlineCheckbox2" <%= if @data.search.query == "correlation_id", do: "checked" %>>
+          <input phx-click="search_by" phx-value-query="correlation_id" name="search[query]" value="correlation_id" class="form-check-input" type="checkbox" id="inlineCheckbox2" <%= if @state.search.query == "correlation_id", do: "checked" %>>
           <label class="form-check-label" for="inlineCheckbox2">corrleation ID</label>
         </div>
         <div class="form-check form-check-inline">
-          <input phx-click="search_by" phx-value-query="message_type" name="search[query]" value="message_type" class="form-check-input" type="checkbox" id="inlineCheckbox3" <%= if @data.search.query == "message_type", do: "checked" %>>
+          <input phx-click="search_by" phx-value-query="message_type" name="search[query]" value="message_type" class="form-check-input" type="checkbox" id="inlineCheckbox3" <%= if @state.search.query == "message_type", do: "checked" %>>
           <label class="form-check-label" for="inlineCheckbox3">message type</label>
         </div>
       </div>
       <div class="form-group">
-        <input name="search[value]" value="<%= @data.search.value %>" type="text" class="form-control" id="value" placeholder="<%= "search by #{@data.search.query}"  %>">
+        <input name="search[value]" value="<%= @state.search.value %>" type="text" class="form-control" id="value" placeholder="<%= "search by #{@state.search.query}"  %>">
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
       <%= live_link "Clear", class: "btn btn-info", to: Routes.live_path(@socket, @view, %{}) %>

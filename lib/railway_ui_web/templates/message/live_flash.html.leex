@@ -1,4 +1,4 @@
-<%= Enum.map(@data.flash, fn {flash_key, flash_message} -> %>
+<%= Enum.map(@state.flash, fn {flash_key, flash_message} -> %>
   <%= if flash_key == :error do %>
     <p class="alert alert-dismissible fade show alert-danger"><%= flash_message %>
   <% else %>
