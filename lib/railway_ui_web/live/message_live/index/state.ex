@@ -1,46 +1,35 @@
-defmodule RailwayUiWeb.PublishedMessageLive.Index.State do
-  alias RailwayUi.PublishedMessage
-  alias RailwayUiWeb.PublishedMessageLive.Index.Search
+defmodule RailwayUiWeb.MessageLive.Index.State do
+  alias RailwayUiWeb.MessageLive.Index.Search
   @per_page 2
   @page "1"
   defstruct [:search, :current_user_uuid, :flash, :page, :page_nums, :query_filter, :query_value]
 
-  def new(current_user_uuid) do
+  def new(message_type, current_user_uuid) do
     %__MODULE__{
       flash: %{},
       current_user_uuid: current_user_uuid,
       page: String.to_integer(@page),
-      page_nums: page_nums(),
+      page_nums: page_nums(message_type),
       search: %Search{}
     }
   end
 
-  def reset_messages(current_user_uuid) do
-    %__MODULE__{
-      flash: %{},
-      current_user_uuid: current_user_uuid,
-      page: String.to_integer(@page),
-      page_nums: page_nums(),
-      search: %Search{}
-    }
+  def load_messages(message_type) do
+    message_type.all(%{limit: @per_page, page: String.to_integer(@page)})
   end
 
-  def load_messages do
-    PublishedMessage.all(%{limit: @per_page, page: String.to_integer(@page)})
+  def messages_page(message_type, page_num) do
+    message_type.all(%{limit: @per_page, page: String.to_integer(page_num)})
   end
 
-  def messages_page(page_num) do
-    PublishedMessage.all(%{limit: @per_page, page: String.to_integer(page_num)})
+  def messages_search(message_type, query, value, page_num \\ @page) do
+    message_type.search(query, value, %{limit: @per_page, page: String.to_integer(page_num)})
   end
 
-  def messages_search(query, value, page_num \\ @page) do
-    PublishedMessage.search(query, value, %{limit: @per_page, page: String.to_integer(page_num)})
-  end
-
-  def for_search(data, query, value, page_num \\ @page) do
+  def for_search(message_type, data, query, value, page_num \\ @page) do
     data
     |> set_search(query, value)
-    |> set_page_nums(PublishedMessage.search_results_count(query, value))
+    |> set_page_nums(message_type.search_results_count(query, value))
     |> set_page(page_num)
   end
 
@@ -62,13 +51,13 @@ defmodule RailwayUiWeb.PublishedMessageLive.Index.State do
 
   def flash_success(data, message_uuid) do
     data
-    |> Map.merge(%{flash: %{info: "Successfully republished message #{message_uuid}!"}})
+    |> Map.merge(%{flash: %{info: "Successfully published message #{message_uuid}!"}})
   end
 
   def flash_error(data, message_uuid, error) do
     data
     |> Map.merge(%{
-      flash: %{error: "Failed to republish message #{message_uuid}, reason: #{inspect(error)}"}
+      flash: %{error: "Failed to publish message #{message_uuid}, reason: #{inspect(error)}"}
     })
   end
 
@@ -91,8 +80,8 @@ defmodule RailwayUiWeb.PublishedMessageLive.Index.State do
     |> calculate_page_nums
   end
 
-  def page_nums do
-    PublishedMessage.count()
+  def page_nums(message_type) do
+    message_type.count()
     |> calculate_page_nums()
   end
 

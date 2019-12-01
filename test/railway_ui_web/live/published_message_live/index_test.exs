@@ -62,7 +62,7 @@ defmodule RailwayUiWeb.PublishedMessageLive.IndexTest do
     end)
 
     html = render_click(view, :republish, %{"message_uuid" => published_message_uuid})
-    assert html =~ "Successfully republished message"
+    assert html =~ "Successfully published message"
   end
 
   test "it paginates", %{html: html, view: view, published_messages: published_messages} do

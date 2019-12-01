@@ -25,9 +25,4 @@ defmodule RailwayUiWeb.Router do
     live "/published_messages", PublishedMessageLive.Index, session: [:current_user_uuid]
     get "/consumed_messages", ConsumedMessageController, :index
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", RailwayUiWeb do
-  #   pipe_through :api
-  # end
 end

@@ -1,0 +1,11 @@
+<%= Enum.map(@data.flash, fn {flash_key, flash_message} -> %>
+  <%= if flash_key == :error do %>
+    <p class="alert alert-dismissible fade show alert-danger"><%= flash_message %>
+  <% else %>
+    <p class="alert alert-dismissible fade show alert-success"><%= flash_message %>
+  <% end %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </p>
+<% end) %>
