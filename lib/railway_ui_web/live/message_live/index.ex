@@ -2,7 +2,6 @@ defmodule RailwayUiWeb.MessageLive.Index do
   alias RailwayUiWeb.MessageLive.Index.State
   alias RailwayUiWeb.Router.Helpers, as: Routes
 
-
   defmacro __using__(opts) do
     quote do
       use Phoenix.LiveView
@@ -16,9 +15,9 @@ defmodule RailwayUiWeb.MessageLive.Index do
       def mount(%{current_user_uuid: current_user_uuid}, socket) do
         socket =
           socket
-          |> assign(:messages, State.load_messages(@message_type))
           |> assign(:view, __MODULE__)
           |> assign(:state, State.new(@message_type, current_user_uuid))
+          |> assign(:messages, State.load_messages(@message_type))
 
         {:ok, socket, temporary_assigns: [messages: nil]}
       end
@@ -82,8 +81,28 @@ defmodule RailwayUiWeb.MessageLive.Index do
          )}
       end
 
-      def handle_event("search_by", %{"query" => query}, %{assigns: %{state: state}} = socket) do
-        {:noreply, assign(socket, :state, State.set_search(state, query))}
+      def handle_event(
+            "search_form_change",
+            %{"_target" => ["search", "value"], "search" => %{"value" => value}},
+            %{assigns: %{state: state}} = socket
+          ) do
+        {:noreply, assign(socket, :state, State.set_search_value(state, value))}
+      end
+
+      def handle_event(
+            "search_form_change",
+            %{"_target" => ["search", "query"], "search" => %{"query" => query}},
+            %{assigns: %{state: state}} = socket
+          ) do
+        {:noreply, assign(socket, :state, State.set_search_query(state, query))}
+      end
+
+      def handle_event(
+            "search_form_change",
+            %{"_target" => ["search", "query"], "search" => %{"value" => _value}},
+            socket
+          ) do
+        {:noreply, socket}
       end
     end
   end

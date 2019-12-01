@@ -1,10 +1,11 @@
 defmodule RailwayUiWeb.PublishedMessageLive.Index do
   alias RailwayUiWeb.MessageLive.Index.State
+
   use RailwayUiWeb.MessageLive.Index,
     message: RailwayUi.PublishedMessage,
     view: RailwayUiWeb.PublishedMessageView
-  @railway_ipc Application.get_env(:railway_ui, :railway_ipc, RailwayIpc)
 
+  @railway_ipc Application.get_env(:railway_ui, :railway_ipc, RailwayIpc)
 
   def handle_event(
         "republish",

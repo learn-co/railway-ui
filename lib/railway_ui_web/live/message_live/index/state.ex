@@ -27,7 +27,7 @@ defmodule RailwayUiWeb.MessageLive.Index.State do
       message_type.search(query, value, %{limit: @per_page, page: String.to_integer(page_num)})
     rescue
       _e in Ecto.Query.CastError ->
-      []
+        []
     end
   end
 
@@ -46,8 +46,12 @@ defmodule RailwayUiWeb.MessageLive.Index.State do
     update(state, %{search: %Search{query: query, value: value}})
   end
 
-  def set_search(state, query) do
-    update(state, %{search: %Search{query: query}})
+  def set_search_query(%{search: %{query: _query, value: value}} = state, query) do
+    update(state, %{search: %Search{query: query, value: value}})
+  end
+
+  def set_search_value(%{search: %{query: query, value: _value}} = state, value) do
+    update(state, %{search: %Search{query: query, value: value}})
   end
 
   def set_page_nums(state, count) do
@@ -99,8 +103,9 @@ defmodule RailwayUiWeb.MessageLive.Index.State do
   defp search_results_count(message_type, query, value) do
     try do
       message_type.search_results_count(query, value)
-    rescue _e in Ecto.Query.CastError ->
-      0
+    rescue
+      _e in Ecto.Query.CastError ->
+        0
     end
   end
 end
