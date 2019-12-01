@@ -20,7 +20,7 @@ defmodule RailwayUiWeb.MessageLive.Index do
           |> assign(:view, __MODULE__)
           |> assign(:state, State.new(@message_type, current_user_uuid))
 
-        {:ok, socket, temporary_assigns: [messages: []]}
+        {:ok, socket, temporary_assigns: [messages: nil]}
       end
 
       def handle_params(

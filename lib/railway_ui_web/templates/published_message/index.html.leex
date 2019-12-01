@@ -3,7 +3,7 @@
   <div class="col-md-auto">
     <h1 class="display-3">Published Messages</h1>
     <%= render RailwayUiWeb.MessageView, "search.html", assigns %>
-    <table class="table table-responsive pt-3 table-hover">
+    <table class="table table-responsive pt-3 table-hover" phx-update="replace">
       <thead>
         <tr>
           <th>Message Type</th>

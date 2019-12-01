@@ -23,39 +23,44 @@ defmodule RailwayUiWeb.MessageLive.Index.State do
   end
 
   def messages_search(message_type, query, value, page_num \\ @page) do
-    message_type.search(query, value, %{limit: @per_page, page: String.to_integer(page_num)})
+    try do
+      message_type.search(query, value, %{limit: @per_page, page: String.to_integer(page_num)})
+    rescue
+      _e in Ecto.Query.CastError ->
+      []
+    end
   end
 
-  def for_search(message_type, data, query, value, page_num \\ @page) do
-    data
+  def for_search(message_type, state, query, value, page_num \\ @page) do
+    state
     |> set_search(query, value)
-    |> set_page_nums(message_type.search_results_count(query, value))
+    |> set_page_nums(search_results_count(message_type, query, value))
     |> set_page(page_num)
   end
 
-  def set_page(data, page_num) do
-    update(data, %{page: String.to_integer(page_num)})
+  def set_page(state, page_num) do
+    update(state, %{page: String.to_integer(page_num)})
   end
 
-  def set_search(data, query, value) do
-    update(data, %{search: %Search{query: query, value: value}})
+  def set_search(state, query, value) do
+    update(state, %{search: %Search{query: query, value: value}})
   end
 
-  def set_search(data, query) do
-    update(data, %{search: %Search{query: query}})
+  def set_search(state, query) do
+    update(state, %{search: %Search{query: query}})
   end
 
-  def set_page_nums(data, count) do
-    update(data, %{page_nums: page_nums_for_count(count)})
+  def set_page_nums(state, count) do
+    update(state, %{page_nums: page_nums_for_count(count)})
   end
 
-  def flash_success(data, message_uuid) do
-    data
+  def flash_success(state, message_uuid) do
+    state
     |> Map.merge(%{flash: %{info: "Successfully published message #{message_uuid}!"}})
   end
 
-  def flash_error(data, message_uuid, error) do
-    data
+  def flash_error(state, message_uuid, error) do
+    state
     |> Map.merge(%{
       flash: %{error: "Failed to publish message #{message_uuid}, reason: #{inspect(error)}"}
     })
@@ -70,8 +75,8 @@ defmodule RailwayUiWeb.MessageLive.Index.State do
     }
   end
 
-  defp update(data, attrs) do
-    data
+  defp update(state, attrs) do
+    state
     |> Map.merge(attrs)
   end
 
@@ -89,5 +94,13 @@ defmodule RailwayUiWeb.MessageLive.Index.State do
     (page_count / @per_page)
     |> Float.ceil()
     |> Kernel.trunc()
+  end
+
+  defp search_results_count(message_type, query, value) do
+    try do
+      message_type.search_results_count(query, value)
+    rescue _e in Ecto.Query.CastError ->
+      0
+    end
   end
 end
