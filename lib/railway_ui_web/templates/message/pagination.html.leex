@@ -1,15 +1,15 @@
 <nav aria-label="Page navigation example">
 <ul class="pagination justify-content-center">
   <li class="page-item <%= if @data.page == 1, do: "disabled" %>">
-    <%= live_link "Previous", class: "page-link", to: Routes.live_path(@socket, RailwayUiWeb.PublishedMessageLive.Index, pagination_params(@data.search, @data.page - 1)) %>
+    <%= live_link "Previous", class: "page-link", to: Routes.live_path(@socket, @view, pagination_params(@data.search, @data.page - 1)) %>
   </li>
   <%= for i <- 0..@data.page_nums, i > 0 do %>
     <li class="page-item <%=  if @data.page == i, do: "active" %>">
-      <%= live_link "#{i}", class: "page-link", to: Routes.live_path(@socket, RailwayUiWeb.PublishedMessageLive.Index, pagination_params(@data.search, i)) %>
+      <%= live_link "#{i}", class: "page-link", to: Routes.live_path(@socket, @view, pagination_params(@data.search, i)) %>
     </li>
   <% end %>
   <li class="page-item <%= if @data.page == @data.page_nums, do: "disabled" %>">
-    <%= live_link "Next", class: "page-link", to: Routes.live_path(@socket, RailwayUiWeb.PublishedMessageLive.Index, pagination_params(@data.search, @data.page + 1)) %>
+    <%= live_link "Next", class: "page-link", to: Routes.live_path(@socket, @view, pagination_params(@data.search, @data.page + 1)) %>
   </li>
 </ul>
 </nav>

@@ -17,6 +17,7 @@ defmodule RailwayUiWeb.MessageLive.Index do
         socket =
           socket
           |> assign(:messages, State.load_messages(@message_type))
+          |> assign(:view, __MODULE__)
           |> assign(:data, State.new(@message_type, current_user_uuid))
 
         {:ok, socket, temporary_assigns: [messages: []]}

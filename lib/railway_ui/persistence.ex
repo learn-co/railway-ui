@@ -3,14 +3,19 @@ defmodule RailwayUi.Persistence do
   @repo Application.get_env(:railway_ipc, :repo)
   alias RailwayIpc.Persistence.{PublishedMessage, ConsumedMessage}
 
-  def get_consumed_messages do
+  def get_consumed_messages(%{limit: limit, page: page}) do
     ConsumedMessage
-    |> @repo.all()
+    |> get_messages(limit, page)
   end
 
   def get_published_messages(%{limit: limit, page: page}) do
     PublishedMessage
     |> get_messages(limit, page)
+  end
+
+  def consumed_messages_count do
+    Ecto.Query.from(m in ConsumedMessage)
+    |> get_count()
   end
 
   def published_messages_count do
@@ -23,8 +28,19 @@ defmodule RailwayUi.Persistence do
     |> get_count()
   end
 
+  def count_consumed_message_search_results(query_filter, query_value) do
+    search_query(ConsumedMessage, query_filter, query_value)
+    |> get_count()
+  end
+
   def search_published_messages(query_filter, query_value, %{limit: limit, page: page}) do
     search_query(PublishedMessage, query_filter, query_value)
+    |> pagination_query(limit, page)
+    |> @repo.all()
+  end
+
+  def search_consumed_messages(query_filter, query_value, %{limit: limit, page: page}) do
+    search_query(ConsumedMessage, query_filter, query_value)
     |> pagination_query(limit, page)
     |> @repo.all()
   end

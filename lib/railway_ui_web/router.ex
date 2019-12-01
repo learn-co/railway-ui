@@ -23,6 +23,6 @@ defmodule RailwayUiWeb.Router do
 
     get "/", PageController, :index
     live "/published_messages", PublishedMessageLive.Index, session: [:current_user_uuid]
-    get "/consumed_messages", ConsumedMessageController, :index
+    live "/consumed_messages", ConsumedMessageLive.Index, session: [:current_user_uuid]
   end
 end

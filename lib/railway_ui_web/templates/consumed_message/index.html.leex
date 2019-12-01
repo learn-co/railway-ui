@@ -1,7 +1,8 @@
+<%= render RailwayUiWeb.MessageView, "live_flash.html", assigns %>
 <div class="row justify-content-md-center">
   <div class="col-md-auto">
-    <h1 class="display-3">Consumed Messages
-    </h1>
+    <h1 class="display-3">Consumed Messages</h1>
+    <%= render RailwayUiWeb.MessageView, "search.html", assigns %>
     <table class="table table-responsive pt-3 table-hover">
       <thead>
         <tr>
@@ -12,6 +13,7 @@
           <th>Encoded Message</th>
           <th>Correlation ID</th>
           <th>User UUID</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -28,5 +30,6 @@
         <% end %>
       </tbody>
     </table>
+    <%= render RailwayUiWeb.MessageView, "pagination.html", assigns %>
   </div>
 </div>
