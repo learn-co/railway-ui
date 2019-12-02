@@ -1,7 +1,13 @@
-defmodule RailwayUiWeb.PublishedMessageLive.Index do
+defmodule RailwayUiWeb.PublishedMessageLive.TableComponent do
+  use Phoenix.LiveComponent
+
   alias RailwayUiWeb.MessageLive.Index.State
   use Phoenix.LiveView
   @railway_ipc Application.get_env(:railway_ui, :railway_ipc, RailwayIpc)
+
+  def render(assigns) do
+    Phoenix.View.render(RailwayUiWeb.PublishedMessageView, "table_component.html", assigns)
+  end
 
   def handle_event(
         "republish",

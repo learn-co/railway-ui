@@ -1,5 +1,7 @@
 defmodule RailwayUiWeb.MessageView do
   use RailwayUiWeb, :view
+  import RailwayUiWeb.MessageViewHelper
+
 
   def pagination_params(%{value: nil}, page_num) do
     %{page: page_num}

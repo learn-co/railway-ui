@@ -20,7 +20,7 @@
         <input name="search[value]" value="<%= @state.search.value %>" type="text" class="form-control" id="value" placeholder="<%= "search by #{@state.search.query}"  %>">
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
-      <%= live_link "Clear", class: "btn btn-info", to: Routes.live_path(@socket, @view, %{}) %>
+      <%= live_link "Clear", class: "btn btn-info", to: Routes.live_path(@socket, RailwayUiWeb.MessageLive.Index, %{}) %>
     </form>
   </div>
 </div>

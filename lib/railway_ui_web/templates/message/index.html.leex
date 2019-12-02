@@ -1,0 +1,9 @@
+<%= render RailwayUiWeb.MessageView, "live_flash.html", assigns %>
+<div class="row justify-content-md-center">
+  <div class="col-md-auto">
+    <h1 class="display-3">Published Messages</h1>
+    <%= render RailwayUiWeb.MessageView, "search.html", assigns %>
+    <%= live_component @socket, RailwayUiWeb.PublishedMessageLive.TableComponent, messages: @messages, state: @state, id: "blah" %>
+    <%= render RailwayUiWeb.MessageView, "pagination.html", assigns %>
+  </div>
+</div>

@@ -22,7 +22,9 @@ defmodule RailwayUiWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
-    live "/published_messages", PublishedMessageLive.Index, session: [:current_user_uuid]
-    live "/consumed_messages", ConsumedMessageLive.Index, session: [:current_user_uuid]
+    live "/published_messages", MessageLive.Index, session: [:current_user_uuid], name: "Sophie"
+    live "/consumed_messages", MessageLive.Index, session: [:current_user_uuid]
+    # live "/published_messages", PublishedMessageLive.Index, session: [:current_user_uuid]
+    # live "/consumed_messages", ConsumedMessageLive.Index, session: [:current_user_uuid]
   end
 end

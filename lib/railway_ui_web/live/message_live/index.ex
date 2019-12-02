@@ -1,109 +1,106 @@
 defmodule RailwayUiWeb.MessageLive.Index do
   alias RailwayUiWeb.MessageLive.Index.State
   alias RailwayUiWeb.Router.Helpers, as: Routes
+  use Phoenix.LiveView
 
-  defmacro __using__(opts) do
-    quote do
-      use Phoenix.LiveView
-      @message_type unquote(opts)[:message]
-      @view unquote(opts)[:view]
+  def render(assigns) do
+    Phoenix.View.render(RailwayUiWeb.MessageView, "index.html", assigns)
+  end
 
-      def render(assigns) do
-        Phoenix.View.render(@view, "index.html", assigns)
-      end
+  def mount(%{current_user_uuid: current_user_uuid} = session, socket) do
+    socket =
+      socket
+      |> assign(:state, State.new(current_user_uuid))
+    {:ok, socket, temporary_assigns: [messages: nil]}
+  end
 
-      def mount(%{current_user_uuid: current_user_uuid}, socket) do
-        socket =
-          socket
-          |> assign(:view, __MODULE__)
-          |> assign(:state, State.new(@message_type, current_user_uuid))
-          |> assign(:messages, State.load_messages(@message_type))
+  def handle_params(
+        %{"page" => page_num, "search" => %{"query" => query, "value" => value}},
+        uri,
+        %{assigns: %{state: state}} = socket
+      ) do
+    %{path: "/" <> message_type} = URI.parse(uri)
+    state = State.new(state, message_type, page_num)
+    socket =
+      socket
+      |> assign(:state, State.for_search(state, query, value, page_num))
+      |> assign(:messages, State.messages_search(state, query, value, page_num))
 
-        {:ok, socket, temporary_assigns: [messages: nil]}
-      end
+    {:noreply, socket}
+  end
 
-      def handle_params(
-            %{"page" => page_num, "search" => %{"query" => query, "value" => value}},
-            _uri,
-            %{assigns: %{state: state}} = socket
-          ) do
-        socket =
-          socket
-          |> assign(:state, State.for_search(@message_type, state, query, value, page_num))
-          |> assign(:messages, State.messages_search(@message_type, query, value, page_num))
+  def handle_params(
+        %{"page" => page_num},
+        uri,
+        %{assigns: %{state: state}} = socket
+      ) do
+    %{path: "/" <> message_type} = URI.parse(uri)
+    state = State.new(state, message_type, page_num)
+    socket =
+      socket
+      |> assign(:state, state)
+      |> assign(:messages, State.messages_page(state, page_num))
 
-        {:noreply, socket}
-      end
+    {:noreply, socket}
+  end
 
-      def handle_params(
-            %{"page" => page_num},
-            _uri,
-            %{assigns: %{state: state}} = socket
-          ) do
-        socket =
-          socket
-          |> assign(:state, State.set_page(state, page_num))
-          |> assign(:messages, State.messages_page(@message_type, page_num))
+  def handle_params(
+        %{"search" => %{"query" => query, "value" => value}},
+        uri,
+        %{assigns: %{state: state}} = socket
+      ) do
+    %{path: "/" <> message_type} = URI.parse(uri)
+    state = State.new(state, message_type)
+    socket =
+      socket
+      |> assign(:state, State.for_search(state, query, value))
+      |> assign(:messages, State.messages_search(state, query, value))
 
-        {:noreply, socket}
-      end
+    {:noreply, socket}
+  end
+  def handle_params(
+        _params,
+        uri,
+        %{assigns: %{state: state}} = socket
+      ) do
+    %{path: "/" <> message_type} = URI.parse(uri)
+    state = State.new(state, message_type)
+    socket =
+      socket
+      |> assign(:state, state)
+      |> assign(:messages, State.load_messages(state))
 
-      def handle_params(
-            %{"search" => %{"query" => query, "value" => value}},
-            _,
-            %{assigns: %{state: state}} = socket
-          ) do
-        socket =
-          socket
-          |> assign(:state, State.for_search(@message_type, state, query, value))
-          |> assign(:messages, State.messages_search(@message_type, query, value))
+    {:noreply, socket}
+  end
 
-        {:noreply, socket}
-      end
+  def handle_event("search", params, socket) do
+    {:noreply,
+     live_redirect(socket,
+       to: Routes.live_path(socket, __MODULE__, params)
+     )}
+  end
 
-      def handle_params(
-            _params,
-            _,
-            %{assigns: %{state: %{current_user_uuid: current_user_uuid}}} = socket
-          ) do
-        socket =
-          socket
-          |> assign(:state, State.new(@message_type, current_user_uuid))
-          |> assign(:messages, State.load_messages(@message_type))
+  def handle_event(
+        "search_form_change",
+        %{"_target" => ["search", "value"], "search" => %{"value" => value}},
+        %{assigns: %{state: state}} = socket
+      ) do
+    {:noreply, assign(socket, :state, State.set_search_value(state, value))}
+  end
 
-        {:noreply, socket}
-      end
+  def handle_event(
+        "search_form_change",
+        %{"_target" => ["search", "query"], "search" => %{"query" => query}},
+        %{assigns: %{state: state}} = socket
+      ) do
+    {:noreply, assign(socket, :state, State.set_search_query(state, query))}
+  end
 
-      def handle_event("search", params, socket) do
-        {:noreply,
-         live_redirect(socket,
-           to: Routes.live_path(socket, __MODULE__, params)
-         )}
-      end
-
-      def handle_event(
-            "search_form_change",
-            %{"_target" => ["search", "value"], "search" => %{"value" => value}},
-            %{assigns: %{state: state}} = socket
-          ) do
-        {:noreply, assign(socket, :state, State.set_search_value(state, value))}
-      end
-
-      def handle_event(
-            "search_form_change",
-            %{"_target" => ["search", "query"], "search" => %{"query" => query}},
-            %{assigns: %{state: state}} = socket
-          ) do
-        {:noreply, assign(socket, :state, State.set_search_query(state, query))}
-      end
-
-      def handle_event(
-            "search_form_change",
-            %{"_target" => ["search", "query"], "search" => %{"value" => _value}},
-            socket
-          ) do
-        {:noreply, socket}
-      end
-    end
+  def handle_event(
+        "search_form_change",
+        %{"_target" => ["search", "query"], "search" => %{"value" => _value}},
+        socket
+      ) do
+    {:noreply, socket}
   end
 end
