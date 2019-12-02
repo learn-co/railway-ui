@@ -73,14 +73,63 @@ defmodule RailwayUiWeb.PublishedMessageLive.IndexTest do
     assert html =~ Enum.at(published_messages, 3).uuid
   end
 
-  #
-  # test "it searches by UUID", %{
-  #   view: view,
-  #   core_cohort: core_cohort,
-  #   second_core_cohort: second_core_cohort
-  # } do
-  #   html = render_submit(view, :uuid_search, %{uuid: core_cohort.uuid})
-  #   assert html =~ core_cohort.uuid
-  #   refute html =~ second_core_cohort.uuid
-  # end
+  test "it searches by message UUID", %{html: html, view: view, published_messages: published_messages} do
+    message = Enum.at(published_messages, 3)
+    query_filter = "uuid"
+    query_value = message.uuid
+
+    RailwayUi.PersistenceMock
+    |> stub(:search_published_messages, fn ^query_filter, ^query_value, %{limit: 2, page: 1} ->
+      [message]
+    end)
+
+    RailwayUi.PersistenceMock
+    |> stub(:published_message_search_results_count, fn ^query_filter, ^query_value ->
+      1
+    end)
+
+    assert html != Enum.at(published_messages, 3).uuid
+    html = render_submit(view, :search, %{"search" => %{"query" => query_filter, "value" => query_value}})
+    assert html =~ Enum.at(published_messages, 3).correlation_id
+  end
+
+  test "it searches by correlation ID", %{html: html, view: view, published_messages: published_messages} do
+    message = Enum.at(published_messages, 3)
+    query_filter = "correlation_id"
+    query_value = message.correlation_id
+
+    RailwayUi.PersistenceMock
+    |> stub(:search_published_messages, fn ^query_filter, ^query_value, %{limit: 2, page: 1} ->
+      [message]
+    end)
+
+    RailwayUi.PersistenceMock
+    |> stub(:published_message_search_results_count, fn ^query_filter, ^query_value ->
+      1
+    end)
+
+    assert html != Enum.at(published_messages, 3).uuid
+    html = render_submit(view, :search, %{"search" => %{"query" => query_filter, "value" => query_value}})
+    assert html =~ Enum.at(published_messages, 3).uuid
+  end
+
+  test "it searches by message type with pagination", %{html: html, view: view, published_messages: published_messages} do
+    message = Enum.at(published_messages, 3)
+    query_filter = "message_type"
+    query_value = message.message_type
+
+    RailwayUi.PersistenceMock
+    |> stub(:search_published_messages, fn ^query_filter, ^query_value, %{limit: 2, page: 2} ->
+      [message]
+    end)
+
+    RailwayUi.PersistenceMock
+    |> stub(:published_message_search_results_count, fn ^query_filter, ^query_value ->
+      1
+    end)
+
+    assert html != Enum.at(published_messages, 3).uuid
+    html = render_submit(view, :search, %{"page" => "2", "search" => %{"query" => query_filter, "value" => query_value}})
+    assert html =~ Enum.at(published_messages, 3).uuid
+  end
 end

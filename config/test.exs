@@ -11,6 +11,7 @@ config :logger, level: :warn
 
 config :railway_ui, persistence: RailwayUi.PersistenceMock
 config :railway_ui, railway_ipc: RailwayIpcMock
+config :railway_ui, per_page: 2
 
 # Configure your database
 config :railway_ui, RailwayUi.Repo,

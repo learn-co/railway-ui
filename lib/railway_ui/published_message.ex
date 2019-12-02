@@ -14,6 +14,6 @@ defmodule RailwayUi.PublishedMessage do
   end
 
   def search_results_count(query_filter, query_value) do
-    @persistence.count_published_message_search_results(query_filter, query_value)
+    @persistence.published_message_search_results_count(query_filter, query_value)
   end
 end

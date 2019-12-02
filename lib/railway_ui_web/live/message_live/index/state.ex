@@ -1,6 +1,6 @@
 defmodule RailwayUiWeb.MessageLive.Index.State do
   alias RailwayUiWeb.MessageLive.Index.Search
-  @per_page 2
+  @per_page Application.get_env(:railway_ui, :per_page, 2)
   @page "1"
   defstruct [:search, :current_user_uuid, :flash, :page, :page_nums, :query_filter, :query_value]
 

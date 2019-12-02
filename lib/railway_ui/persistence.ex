@@ -23,12 +23,12 @@ defmodule RailwayUi.Persistence do
     |> get_count()
   end
 
-  def count_published_message_search_results(query_filter, query_value) do
+  def published_message_search_results_count(query_filter, query_value) do
     search_query(PublishedMessage, query_filter, query_value)
     |> get_count()
   end
 
-  def count_consumed_message_search_results(query_filter, query_value) do
+  def consumed_message_search_results_count(query_filter, query_value) do
     search_query(ConsumedMessage, query_filter, query_value)
     |> get_count()
   end

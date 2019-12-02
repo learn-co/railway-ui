@@ -20,11 +20,11 @@ defmodule RailwayUi.PersistenceBehaviour do
             ) :: [
               ConsumedMessage.t()
             ]
-  @callback count_published_message_search_results(
+  @callback published_message_search_results_count(
               query_filter :: String.t(),
               query_value :: String.t()
             ) :: Integer.t()
-  @callback count_consumed_message_search_results(
+  @callback consumed_message_search_results_count(
               query_filter :: String.t(),
               query_value :: String.t()
             ) :: Integer.t()
