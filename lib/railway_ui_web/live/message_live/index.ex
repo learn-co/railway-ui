@@ -74,35 +74,11 @@ defmodule RailwayUiWeb.MessageLive.Index do
         {:noreply, socket}
       end
 
-      def handle_event("search", params, socket) do
+      def handle_info({:search, params}, socket) do
         {:noreply,
          live_redirect(socket,
            to: Routes.live_path(socket, __MODULE__, params)
          )}
-      end
-
-      def handle_event(
-            "search_form_change",
-            %{"_target" => ["search", "value"], "search" => %{"value" => value}},
-            %{assigns: %{state: state}} = socket
-          ) do
-        {:noreply, assign(socket, :state, State.set_search_value(state, value))}
-      end
-
-      def handle_event(
-            "search_form_change",
-            %{"_target" => ["search", "query"], "search" => %{"query" => query}},
-            %{assigns: %{state: state}} = socket
-          ) do
-        {:noreply, assign(socket, :state, State.set_search_query(state, query))}
-      end
-
-      def handle_event(
-            "search_form_change",
-            %{"_target" => ["search", "query"], "search" => %{"value" => _value}},
-            socket
-          ) do
-        {:noreply, socket}
       end
     end
   end

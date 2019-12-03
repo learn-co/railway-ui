@@ -1,9 +1,10 @@
 <%= render RailwayUiWeb.MessageView, "live_flash.html", assigns %>
 <div class="row justify-content-md-center">
   <div class="col-md-auto">
-    <h1 class="display-3">Consumed Messages</h1>
-    <%= live_component @socket, RailwayUiWeb.MessageLive.SearchComponent, view: @view, id: :search %>
-    <table class="table table-responsive pt-3 table-hover">
+    <h1 class="display-3">Published Messages</h1>
+    <%= live_component @socket, RailwayUiWeb.MessageLive.SearchComponent, view: RailwayUiWeb.PublishedMessageLive.Index, id: :search %>
+    <%#= render RailwayUiWeb.MessageView, "search.html", assigns %>
+    <table class="table table-responsive pt-3 table-hover" phx-update="replace">
       <thead>
         <tr>
           <th>Message Type</th>
@@ -26,6 +27,9 @@
             <td><%= decode_message_body(message.encoded_message) %></td>
             <td><%= message.correlation_id %></td>
             <td><%= message.user_uuid %></td>
+            <%= if message.message_type != "LearnIpc::Commands::RepublishMessage" do %>
+              <td><button class="btn btn-info" phx-click="republish" phx-value-message_uuid="<%= message.uuid %>">republish</button></td>
+            <% end %>
           </tr>
         <% end %>
       </tbody>

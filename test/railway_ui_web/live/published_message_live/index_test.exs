@@ -89,8 +89,8 @@ defmodule RailwayUiWeb.PublishedMessageLive.IndexTest do
     end)
 
     assert html != Enum.at(published_messages, 3).uuid
-    html = render_submit(view, :search, %{"search" => %{"query" => query_filter, "value" => query_value}})
-    assert html =~ Enum.at(published_messages, 3).correlation_id
+    send(view.pid, {:search, %{"search" => %{"query" => query_filter, "value" => query_value}}})
+    assert render(view) =~ Enum.at(published_messages, 3).correlation_id
   end
 
   test "it searches by correlation ID", %{html: html, view: view, published_messages: published_messages} do
@@ -109,8 +109,8 @@ defmodule RailwayUiWeb.PublishedMessageLive.IndexTest do
     end)
 
     assert html != Enum.at(published_messages, 3).uuid
-    html = render_submit(view, :search, %{"search" => %{"query" => query_filter, "value" => query_value}})
-    assert html =~ Enum.at(published_messages, 3).uuid
+    send(view.pid, {:search, %{"search" => %{"query" => query_filter, "value" => query_value}}})
+    assert render(view) =~ Enum.at(published_messages, 3).uuid
   end
 
   test "it searches by message type with pagination", %{html: html, view: view, published_messages: published_messages} do
@@ -129,7 +129,7 @@ defmodule RailwayUiWeb.PublishedMessageLive.IndexTest do
     end)
 
     assert html != Enum.at(published_messages, 3).uuid
-    html = render_submit(view, :search, %{"page" => "2", "search" => %{"query" => query_filter, "value" => query_value}})
-    assert html =~ Enum.at(published_messages, 3).uuid
+    send(view.pid, {:search, %{"page" => "2", "search" => %{"query" => query_filter, "value" => query_value}}})
+    assert render(view) =~ Enum.at(published_messages, 3).uuid
   end
 end
