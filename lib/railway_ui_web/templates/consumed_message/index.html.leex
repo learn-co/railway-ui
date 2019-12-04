@@ -2,7 +2,7 @@
 <div class="row justify-content-md-center">
   <div class="col-md-auto">
     <h1 class="display-3">Consumed Messages</h1>
-    <%= live_component @socket, RailwayUiWeb.MessageLive.SearchComponent, view: @view, id: :search %>
+    <%= live_component @socket, RailwayUiWeb.MessageLive.SearchComponent, view: @view, search: @state.search, id: :search %>
     <table class="table table-responsive pt-3 table-hover">
       <thead>
         <tr>

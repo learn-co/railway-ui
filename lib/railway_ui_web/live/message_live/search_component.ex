@@ -3,17 +3,10 @@ defmodule RailwayUiWeb.MessageLive.SearchComponent do
 
   alias RailwayUiWeb.MessageLive.Index.Search
 
-  def update(assigns, socket) do
-    socket =
-      socket
-      |> assign(:search, %Search{})
-      |> assign(:view, assigns.view)
-    {:ok, socket}
-  end
-
   def render(assigns) do
     Phoenix.View.render(RailwayUiWeb.MessageView, "search_component.html", assigns)
   end
+  
   def handle_event("search", params, socket) do
     send self(), {:search, params}
     {:noreply, socket}
