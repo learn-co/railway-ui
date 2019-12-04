@@ -1,5 +1,6 @@
 <div class="card bg-light mb-3">
   <div class="card-body">
+  query: <%= @search.query %>
     <h5 class="card-title">Search By:</h5>
     <form phx-submit="search" phx-change="search_form_change">
       <div class="form-group">
@@ -20,7 +21,7 @@
         <input name="search[value]" value="<%= @search.value %>" type="text" class="form-control" id="value" placeholder="<%= "search by #{@search.query}"  %>">
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
-      <%= live_link "Clear", class: "btn btn-info", to: Routes.live_path(@socket, @view, %{}) %>
+      <span phx-click="clear" class="btn btn-info">Clear</span>
     </form>
   </div>
 </div>

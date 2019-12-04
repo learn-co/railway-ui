@@ -18,7 +18,6 @@ defmodule RailwayUiWeb.MessageLive.Index do
           |> assign(:view, __MODULE__)
           |> assign(:state, State.new(@message_type, current_user_uuid))
           |> assign(:messages, State.load_messages(@message_type))
-
         {:ok, socket, temporary_assigns: [messages: nil]}
       end
 
@@ -64,13 +63,12 @@ defmodule RailwayUiWeb.MessageLive.Index do
       def handle_params(
             _params,
             _,
-            %{assigns: %{state: %{current_user_uuid: current_user_uuid}}} = socket
+            %{assigns: %{state: %{current_user_uuid: current_user_uuid} = state}} = socket
           ) do
         socket =
           socket
           |> assign(:state, State.new(@message_type, current_user_uuid))
           |> assign(:messages, State.load_messages(@message_type))
-
         {:noreply, socket}
       end
 
@@ -78,6 +76,13 @@ defmodule RailwayUiWeb.MessageLive.Index do
         {:noreply,
          live_redirect(socket,
            to: Routes.live_path(socket, __MODULE__, params)
+         )}
+      end
+
+      def handle_info(:clear, socket) do
+        {:noreply,
+         live_redirect(socket,
+           to: Routes.live_path(socket, __MODULE__, %{})
          )}
       end
     end
