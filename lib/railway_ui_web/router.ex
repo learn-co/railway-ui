@@ -32,14 +32,14 @@ defmodule RailwayUiWeb.Router do
     case List.last(split_segments) do
       last_segment
       when last_segment in ["published_messages", "consumed_messages"] ->
-        route_info_for_live_mounted(router, method, last_segment, host)
+        do_route_info(router, method, [last_segment], host)
       _ ->
-        route_info(router, method, path, host)
+        do_route_info(router, method, split_segments, host)
     end
   end
 
-  def route_info_for_live_mounted(router, method, path, host) do
-    case router.__match_route__(method, [path], host) do
+  def do_route_info(router, method, route_segments, host) do
+    case router.__match_route__(method, route_segments, host) do
       {%{} = metadata, _prepare, _pipeline, {_plug, _opts}} -> Map.delete(metadata, :conn)
       :error -> :error
     end
