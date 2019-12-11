@@ -5,6 +5,7 @@
     <table class="table table-responsive pt-3 table-hover">
       <thead>
         <tr>
+          <th>Actions</th>
           <th>Message Type</th>
           <th>UUID</th>
           <th>Queue</th>
@@ -17,6 +18,11 @@
       <tbody>
         <%= for message <- @messages do %>
           <tr>
+            <%= if message.message_type != "LearnIpc::Commands::RepublishMessage" do %>
+              <td><%= link "republish", to: Routes.published_message_path(@conn, :republish, %{uuid: message.uuid}), method: :post, class: "btn btn-info" %></td>
+            <% else %>
+              <td> <button type="button" name="button" class="btn btn-info" disabled>republish</button>  </td>
+            <% end %>
             <td><%= message.message_type %></td>
             <td><%= message.uuid %></td>
             <td><%= message.queue %></td>

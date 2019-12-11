@@ -10,6 +10,7 @@ config :railway_ui, RailwayUiWeb.Endpoint,
 config :logger, level: :warn
 
 config :railway_ui, persistence: RailwayUi.PersistenceMock
+config :railway_ui, railway_ipc: RailwayIpcMock
 
 # Configure your database
 config :railway_ui, RailwayUi.Repo,

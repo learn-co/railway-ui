@@ -18,6 +18,7 @@ defmodule RailwayUiWeb.Router do
 
     get "/", PageController, :index
     get "/published_messages", PublishedMessageController, :index
+    post "/published_messages/republish", PublishedMessageController, :republish
     get "/consumed_messages", ConsumedMessageController, :index
   end
 
