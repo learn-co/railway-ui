@@ -7,11 +7,11 @@
         <tr>
           <th>Message Type</th>
           <th>UUID</th>
+          <th>Correlation ID</th>
+          <th>User UUID</th>
           <th>Queue</th>
           <th>Exchange</th>
           <th>Encoded Message</th>
-          <th>Correlation ID</th>
-          <th>User UUID</th>
         </tr>
       </thead>
       <tbody>
@@ -19,11 +19,11 @@
           <tr>
             <td><%= message.message_type %></td>
             <td><%= message.uuid %></td>
+            <td><%= message.correlation_id %></td>
+            <td><%= message.user_uuid %></td>
             <td><%= message.queue %></td>
             <td><%= message.exchange %></td>
             <td><%= decode_message_body(message.encoded_message) %></td>
-            <td><%= message.correlation_id %></td>
-            <td><%= message.user_uuid %></td>
           </tr>
         <% end %>
       </tbody>
