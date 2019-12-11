@@ -2018,3 +2018,9 @@ Ranch listener 'Elixir.RailwayUiWeb.Endpoint.HTTP', connection process <0.727.0>
      Reason:     normal
      Offender:   [{pid,<0.4671.0>},{id,'Elixir.RailwayIpc.Connection'},{mfargs,{'Elixir.RailwayIpc.Connection',start_link,[[{name,'Elixir.RailwayIpc.Connection'}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
 
+2019-12-11 12:09:19 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.RailwayIpc.Connection.Supervisor'}
+     Context:    child_terminated
+     Reason:     normal
+     Offender:   [{pid,<0.805.0>},{id,'Elixir.RailwayIpc.Connection'},{mfargs,{'Elixir.RailwayIpc.Connection',start_link,[[{name,'Elixir.RailwayIpc.Connection'}]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+

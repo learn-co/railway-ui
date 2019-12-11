@@ -649,3 +649,27 @@
 2019-12-11 12:03:02.878 [info] <0.43.0> Application railway_ui started on node nonode@nohost
 2019-12-11 12:03:08.729 [error] <0.4457.0> Supervisor 'Elixir.RailwayIpc.Connection.Supervisor' had child 'Elixir.RailwayIpc.Connection' started with 'Elixir.RailwayIpc.Connection':start_link([{name,'Elixir.RailwayIpc.Connection'}]) at <0.4458.0> exit with reason normal in context child_terminated
 2019-12-11 12:03:12.564 [error] <0.4457.0> Supervisor 'Elixir.RailwayIpc.Connection.Supervisor' had child 'Elixir.RailwayIpc.Connection' started with 'Elixir.RailwayIpc.Connection':start_link([{name,'Elixir.RailwayIpc.Connection'}]) at <0.4671.0> exit with reason normal in context child_terminated
+2019-12-11 12:09:12.761 [info] <0.43.0> Application lager started on node nonode@nohost
+2019-12-11 12:09:12.773 [info] <0.43.0> Application xmerl started on node nonode@nohost
+2019-12-11 12:09:12.790 [info] <0.43.0> Application sasl started on node nonode@nohost
+2019-12-11 12:09:12.796 [info] <0.43.0> Application tools started on node nonode@nohost
+2019-12-11 12:09:12.798 [info] <0.43.0> Application jsx started on node nonode@nohost
+2019-12-11 12:09:12.806 [info] <0.43.0> Application ranch started on node nonode@nohost
+2019-12-11 12:09:12.810 [info] <0.43.0> Application recon started on node nonode@nohost
+2019-12-11 12:09:12.838 [info] <0.43.0> Application credentials_obfuscation started on node nonode@nohost
+2019-12-11 12:09:12.838 [info] <0.43.0> Application rabbit_common started on node nonode@nohost
+2019-12-11 12:09:12.848 [info] <0.43.0> Application amqp_client started on node nonode@nohost
+2019-12-11 12:09:12.851 [info] <0.43.0> Application amqp started on node nonode@nohost
+2019-12-11 12:09:12.855 [info] <0.43.0> Application elixir_uuid started on node nonode@nohost
+2019-12-11 12:09:12.860 [info] <0.43.0> Application protobuf started on node nonode@nohost
+2019-12-11 12:09:12.865 [info] <0.43.0> Application google_protos started on node nonode@nohost
+2019-12-11 12:09:12.865 [info] <0.43.0> Application railway_ipc started on node nonode@nohost
+2019-12-11 12:09:12.873 [info] <0.43.0> Application phoenix_html started on node nonode@nohost
+2019-12-11 12:09:12.892 [info] <0.43.0> Application cowlib started on node nonode@nohost
+2019-12-11 12:09:12.903 [info] <0.43.0> Application cowboy started on node nonode@nohost
+2019-12-11 12:09:12.907 [info] <0.43.0> Application plug_cowboy started on node nonode@nohost
+2019-12-11 12:09:12.922 [info] <0.43.0> Application file_system started on node nonode@nohost
+2019-12-11 12:09:12.947 [info] <0.43.0> Application phoenix_live_reload started on node nonode@nohost
+2019-12-11 12:09:12.958 [info] <0.43.0> Application phoenix_ecto started on node nonode@nohost
+2019-12-11 12:09:13.192 [info] <0.43.0> Application railway_ui started on node nonode@nohost
+2019-12-11 12:09:19.478 [error] <0.804.0> Supervisor 'Elixir.RailwayIpc.Connection.Supervisor' had child 'Elixir.RailwayIpc.Connection' started with 'Elixir.RailwayIpc.Connection':start_link([{name,'Elixir.RailwayIpc.Connection'}]) at <0.805.0> exit with reason normal in context child_terminated
