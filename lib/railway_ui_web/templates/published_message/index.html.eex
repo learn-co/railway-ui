@@ -18,7 +18,7 @@
       <tbody>
         <%= for message <- @messages do %>
           <tr>
-            <%= if message.message_type != "LearnIpc::Commands::RepublishMessage" do %>
+            <%= if message.message_type != "RailwayIpc::Commands::RepublishMessage" do %>
               <td><%= link "republish", to: Routes.published_message_path(@conn, :republish, %{uuid: message.uuid}), method: :post, class: "btn btn-info" %></td>
             <% else %>
               <td> <button type="button" name="button" class="btn btn-info" disabled>republish</button>  </td>
