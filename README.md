@@ -9,7 +9,7 @@ Include the Railway UI package in your `mix.exs` file:
 ```elixir
 def deps do
   [
-    {:railway_ui, "~> 0.0.1"}
+    {:railway_ui, "~> 0.0.6"}
   ]
 end
 ```
