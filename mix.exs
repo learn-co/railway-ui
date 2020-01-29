@@ -4,7 +4,7 @@ defmodule RailwayUi.MixProject do
   def project do
     [
       app: :railway_ui,
-      version: "0.0.6",
+      version: "0.0.7",
       elixir: "~> 1.5",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
@@ -47,7 +47,7 @@ defmodule RailwayUi.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:railway_ipc, "0.2.0"},
+      {:railway_ipc, "0.2.1"},
       {:ex_machina, "~> 2.3", only: :test},
       {:mox, "~> 0.5", only: :test},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
