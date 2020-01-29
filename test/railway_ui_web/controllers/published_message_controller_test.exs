@@ -18,10 +18,12 @@ defmodule RailwayUiWeb.PublishedMessageControllerTest do
 
   test "POST /republish", %{conn: conn} do
     uuid = Ecto.UUID.generate()
+
     RailwayIpcMock
     |> expect(:republish_message, fn ^uuid, _request_data ->
       :ok
     end)
+
     conn = post(conn, "/published_messages/republish", %{uuid: uuid})
     assert conn.status == 302
     assert get_flash(conn, :info) == "Sucessfully republished message with uuid: #{uuid}"
@@ -29,12 +31,16 @@ defmodule RailwayUiWeb.PublishedMessageControllerTest do
 
   test "POST /republish fails", %{conn: conn} do
     uuid = Ecto.UUID.generate()
+
     RailwayIpcMock
     |> expect(:republish_message, fn ^uuid, _request_data ->
       {:error, "Error Message"}
     end)
+
     conn = post(conn, "/published_messages/republish", %{uuid: uuid})
     assert conn.status == 302
-    assert get_flash(conn, :error) == "Failed to republish message with uuid: #{uuid}. Reason: \"Error Message\""
+
+    assert get_flash(conn, :error) ==
+             "Failed to republish message with uuid: #{uuid}. Reason: \"Error Message\""
   end
 end

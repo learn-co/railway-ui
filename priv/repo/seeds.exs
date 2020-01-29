@@ -1,6 +1,7 @@
 defmodule Seeder do
   @repo Application.get_env(:railway_ipc, :repo)
-	alias RailwayIpc.Persistence.{ConsumedMessage, PublishedMessage}
+  alias RailwayIpc.Persistence.{ConsumedMessage, PublishedMessage}
+
   def consumed_message_factory do
     %ConsumedMessage{
       uuid: Ecto.UUID.generate(),
@@ -14,7 +15,7 @@ defmodule Seeder do
     }
   end
 
-   def published_message_factory do
+  def published_message_factory do
     %PublishedMessage{
       uuid: Ecto.UUID.generate(),
       message_type: "CreateBatch",
@@ -26,7 +27,7 @@ defmodule Seeder do
     }
   end
 
-   def seed do
+  def seed do
     for i <- 0..10, i > 0 do
       IO.puts("inserting messages #{i}")
       @repo.insert(consumed_message_factory())
@@ -35,4 +36,4 @@ defmodule Seeder do
   end
 end
 
- Seeder.seed()
+Seeder.seed()
