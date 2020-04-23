@@ -1,0 +1,74 @@
+version: '3'
+
+volumes:
+  railway-ui-db-data:
+    external: true
+
+services:
+  db:
+    image: postgres:11-alpine
+    environment:
+      PGHOST: db
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - railway-ui-db-data:/var/lib/postgresql/data
+  rabbitmq:
+    image: rabbitmq:3.6-management
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - .:/app
+      - railway-ui-db-data:/var/lib/postgresql/data
+    stdin_open: true
+    tty: true
+    environment:
+      - DEPLOY_ENV
+      - PGDATABASE
+      - PGHOST
+      - PGPASSWORD
+      - PGPORT
+      - PGUSER
+      - RABBITMQ_CONNECTION_URL=amqp://guest:guest@rabbitmq
+    ports:
+      - "4000:4000"
+    links:
+      - db
+      - rabbitmq
+    command:
+      - ./bin/run.sh
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command:
+        - ./bin/test.sh
+    volumes:
+      - .:/app
+      - railway-ui-db-data:/var/lib/postgresql/data
+    links:
+      - db
+      - rabbitmq
+    environment:
+      - DEPLOY_ENV=test
+      - PGDATABASE=railway_ui_test
+      - PGHOST=db
+      - PGPASSWORD=postgres
+      - PGPORT=5432
+      - PGUSER=postgres
+      - RABBITMQ_CONNECTION_URL=amqp://guest:guest@rabbitmq
+  release:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - RABBITMQ_CONNECTION_URL
+      - PGUSER
+      - PGPASSWORD
+      - PGDATABASE
+      - PGHOST
+      - PGPORT
+      - DEPLOY_ENV=prod
+    ports:
+      - "4000:4000"
