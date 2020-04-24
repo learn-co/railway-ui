@@ -14,8 +14,8 @@ config :railway_ui, railway_ipc: RailwayIpcMock
 
 # Configure your database
 config :railway_ui, RailwayUi.Repo,
-       username: System.get_env("PGUSER"),
-       password: System.get_env("PGPASSWORD"),
-       database: System.get_env("PGDATABASE"),
-       hostname: System.get_env("PGHOST"),
+  username: System.get_env("PGUSER"),
+  password: System.get_env("PGPASSWORD"),
+  database: System.get_env("PGDATABASE"),
+  hostname: System.get_env("PGHOST"),
   pool: Ecto.Adapters.SQL.Sandbox
