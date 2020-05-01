@@ -7,8 +7,10 @@ defmodule RailwayUi.Application do
     Supervisor.start_link(children(@dev_repo), opts)
   end
 
-  def children(true), do: [RailwayUi.Repo, RailwayUiWeb.Endpoint]
-  def children(_), do: [RailwayUiWeb.Endpoint]
+  def children(true),
+    do: [RailwayUi.Repo, RailwayUiWeb.Endpoint, {Phoenix.PubSub, name: RailwayUi.PubSub}]
+
+  def children(_), do: [RailwayUiWeb.Endpoint, {Phoenix.PubSub, name: RailwayUi.PubSub}]
 
   def config_change(changed, _new, removed) do
     RailwayUiWeb.Endpoint.config_change(changed, removed)
