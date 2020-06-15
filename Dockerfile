@@ -33,5 +33,4 @@ WORKDIR /app
 COPY --from=releaser app/_build/prod/rel/railway_ui .
 COPY --from=releaser app/bin/ ./bin
 
-
 CMD ["./bin/railway_ui", "foreground"]
