@@ -50,8 +50,7 @@ defmodule RailwayUi.MixProject do
       {:railway_ipc, "~> 0.2.1"},
       {:ex_machina, "~> 2.3", only: :test},
       {:mox, "~> 0.5", only: :test},
-      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
-      {:phoenix_live_dashboard, "~> 0.1"}
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
     ]
   end
 
