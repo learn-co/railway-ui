@@ -1,5 +1,6 @@
 defmodule RailwayUiWeb.Router do
   use RailwayUiWeb, :router
+  import Phoenix.LiveDashboard.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -20,6 +21,7 @@ defmodule RailwayUiWeb.Router do
     get "/published_messages", PublishedMessageController, :index
     post "/published_messages/republish", PublishedMessageController, :republish
     get "/consumed_messages", ConsumedMessageController, :index
+    live_dashboard "/dashboard"
   end
 
   # Other scopes may use custom stacks.

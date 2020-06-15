@@ -31,6 +31,7 @@ services:
       - PGPORT
       - PGUSER
       - RABBITMQ_CONNECTION_URL=amqp://guest:guest@rabbitmq
+      - SIGNING_SECRET
     ports:
       - "4000:4000"
     links:
@@ -58,6 +59,7 @@ services:
       - PGPORT=5432
       - PGUSER=postgres
       - RABBITMQ_CONNECTION_URL=amqp://guest:guest@rabbitmq
+      - SIGNING_SECRET
   release:
     build:
       context: .
@@ -70,5 +72,6 @@ services:
       - PGHOST
       - PGPORT
       - DEPLOY_ENV=prod
+      - SIGNING_SECRET
     ports:
       - "4000:4000"

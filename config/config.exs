@@ -15,7 +15,8 @@ config :railway_ui, RailwayUiWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "r+27+XkFRv3Cev7AgigTQ9GXu5cfqs4t7iajQEUUiiyeLyn7P6GbKgLyHZqPJiTW",
   render_errors: [view: RailwayUiWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: RailwayUi.PubSub, adapter: Phoenix.PubSub.PG2]
+  pubsub_server: RailwayUi.PubSub,
+  live_view: [signing_salt: System.get_env("SIGNING_SECRET")]
 
 # Configures Elixir's Logger
 config :logger, :console,
