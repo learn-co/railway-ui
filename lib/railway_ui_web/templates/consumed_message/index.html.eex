@@ -1,29 +1,28 @@
 <div class="row justify-content-md-center">
   <div class="col-md-auto">
-    <h1 class="display-3">Consumed Messages
-    </h1>
-    <table class="table table-responsive pt-3 table-hover">
-      <thead>
+    <h1 class="display-3">Consumed Messages</h1>
+    <table class="table table-bordered table-responsive table-hover">
+      <thead class="thead-dark">
         <tr>
-          <th>Message Type</th>
-          <th>UUID</th>
-          <th>Correlation ID</th>
-          <th>User UUID</th>
-          <th>Queue</th>
-          <th>Exchange</th>
-          <th>Encoded Message</th>
+          <th scope="col">Encoded Message</th>
+          <th scope="col">Message Type</th>
+          <th scope="col">UUID</th>
+          <th scope="col">Correlation ID</th>
+          <th scope="col">User UUID</th>
+          <th scope="col">Queue</th>
+          <th scope="col">Exchange</th>
         </tr>
       </thead>
       <tbody>
         <%= for message <- @messages do %>
-          <tr>
+          <tr class="table-active">
+            <td><pre><%= decode_message_body(message) %></pre></td>
             <td><%= message.message_type %></td>
             <td><%= message.uuid %></td>
             <td><%= message.correlation_id %></td>
             <td><%= message.user_uuid %></td>
             <td><%= message.queue %></td>
             <td><%= message.exchange %></td>
-            <td><%= decode_message_body(message.encoded_message) %></td>
           </tr>
         <% end %>
       </tbody>
