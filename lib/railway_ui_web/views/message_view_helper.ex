@@ -3,7 +3,7 @@ defmodule RailwayUiWeb.MessageViewHelper do
     %{"encoded_message" => message_to_decode} = Jason.decode!(encoded_message)
 
     try do
-      stuff = message_type
+      message_type
       |> RailwayIpc.Core.Payload.module_from_type()
       |> RailwayIpc.Core.Payload.decode_message(message_to_decode)
       |> inspect(pretty: true)
