@@ -5,7 +5,7 @@
       <thead class="thead-dark">
         <tr>
           <th scope="col">Actions</th>
-          <th scope="col">Encoded Message</th>
+          <th scope="col">Decoded Message</th>
           <th scope="col">Message Type</th>
           <th scope="col">UUID</th>
           <th scope="col">Correlation ID</th>
